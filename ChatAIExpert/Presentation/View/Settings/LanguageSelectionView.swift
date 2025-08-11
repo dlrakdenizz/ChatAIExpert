@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LanguageSelectionView: View {
     @Environment(\.dismiss) private var dismiss
+    @AppStorage("selectedLanguage") private var selectedLanguage: String = "en"
     
     var body: some View {
         VStack(spacing: 0) {
@@ -30,7 +31,10 @@ struct LanguageSelectionView: View {
                 LanguageOptionRow(
                     flag: "🇺🇸",
                     language: "English",
-                    isSelected: true
+                    isSelected: selectedLanguage == "en",
+                    onTap: {
+                        selectedLanguage = "en"
+                    }
                 )
                 
                 Divider()
@@ -39,7 +43,10 @@ struct LanguageSelectionView: View {
                 LanguageOptionRow(
                     flag: "🇹🇷",
                     language: "Türkçe",
-                    isSelected: false
+                    isSelected: selectedLanguage == "tr",
+                    onTap: {
+                        selectedLanguage = "tr"
+                    }
                 )
             }
             .background(Color.white)
@@ -60,28 +67,32 @@ struct LanguageOptionRow: View {
     let flag: String
     let language: String
     let isSelected: Bool
+    let onTap: () -> Void
     
     var body: some View {
-        HStack(spacing: 16) {
-            Text(flag)
-                .font(.system(size: 28))
-            
-            Text(language)
-                .font(.system(size: 17, weight: .medium))
-                .foregroundColor(.black)
-            
-            Spacer()
-            
-            if isSelected {
-                Image(systemName: "checkmark.circle.fill")
-                    .foregroundColor(.blue)
-                    .font(.system(size: 22))
+        Button(action: onTap) {
+            HStack(spacing: 16) {
+                Text(flag)
+                    .font(.system(size: 28))
+                
+                Text(language)
+                    .font(.system(size: 17, weight: .medium))
+                    .foregroundColor(.black)
+                
+                Spacer()
+                
+                if isSelected {
+                    Image(systemName: "checkmark.circle.fill")
+                        .foregroundColor(.blue)
+                        .font(.system(size: 22))
+                }
             }
+            .padding(.horizontal, 20)
+            .padding(.vertical, 16)
+            .background(Color.white)
+            .contentShape(Rectangle())
         }
-        .padding(.horizontal, 20)
-        .padding(.vertical, 16)
-        .background(Color.white)
-        .contentShape(Rectangle())
+        .buttonStyle(PlainButtonStyle())
     }
 }
 
