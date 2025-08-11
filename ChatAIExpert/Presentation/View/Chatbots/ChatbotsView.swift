@@ -33,7 +33,7 @@ struct ChatbotsView: View {
                             HStack(spacing: 6) {
                                 Image(systemName: category.iconName)
                                     .font(.system(size: 18))
-                                Text(category.rawValue)
+                                Text(category.localizedName)
                                     .font(.system(size: 18))
                             }
                             .foregroundColor(viewModel.selectedCategory == category ? .white : .black)

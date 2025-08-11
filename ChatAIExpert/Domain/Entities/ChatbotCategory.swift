@@ -27,4 +27,8 @@ enum ChatbotCategory: String, CaseIterable, Identifiable {
         case .education: return "book.fill"
         }
     }
+    
+    var localizedName: String {
+          NSLocalizedString(self.rawValue, comment: "Category name")
+      }
 }

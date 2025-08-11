@@ -176,3 +176,68 @@ Sometimes, music understands what we cannot say.";
 
 
 
+//In App
+
+//Tabbar
+"chatbots" = "Sohbet Botları";
+"history" = "Geçmiş";
+"settings" = "Ayarlar";
+
+//Categories
+"Saved" = "Kaydedilenler";
+"Popular" = "Popüler";
+"Relationship" = "İlişki";
+"Health" = "Sağlık";
+"Language" = "Dil";
+"Education" = "Eğitim";
+
+//Settings
+"Account" = "Hesap";
+"In-App Purchases" = "Uygulama İçi Satın Alımlar";
+"Appearance" = "Görünüm";
+
+"Spread the World" = "Duyurun";
+"Rate App" = "Uygulamayı Değerlendirin";
+"Share App" = "Uygulamayı Paylaş";
+
+"Support & Privacy" = "Destek & Gizlilik";
+"Contact Support" = "Destekle İletişime Geçin";
+"Privacy Policy" = "Gizlilik Politikası";
+"Terms of Use" = "Kullanım Koşulları";
+
+//Credits
+"question_credits_info" = "Soru Kredisi Bilgisi";
+"credit_alert" = "Günlük kalan soru kredilerinizi gösterir. Her yeni gün 5 soru kredisi tahsis edilir.";
+"OK" = "Tamam";
+
+//History View
+"no_chat_history" = "Sohbet Geçmişi Yok";
+"no_chat_message" = "Sohbet geçmişiniz burada görünecektir.";
+"clear_chat_title" = "Tüm Sohbetleri Temizle";
+"clear_chat_message" = "Tüm sohbetleri silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.";
+"Cancel" = "İptal";
+"clear_all" = "Tümünü Sil";
+
+//Chat View
+"Send" = "Gönder";
+"Ask to " = "Şuna sor: ";
+"New Chat" = "Yeni Sohbet";
+"new_chat_message" = "Yeni bir sohbet açılacak ve mevcut sohbetiniz geçmişe kaydedilecektir. Devam etmek istiyor musunuz?";
+
+//Onboarding
+"onboarding_1_title" = "Bilgi Dünyanızın Kilidini Açın";
+"onboarding_1_message" = "Keşif ve gelişim için kişisel merkezinize hoş geldiniz. Gelişmiş yapay zeka asistanlarınız, size rehberlik etmeye hazır.";
+"onboarding_2_title" = "Anında Yanıtlar,\nSonsuz Olanaklar";
+"onboarding_2_message" = "İhtiyaç duyduğunuz her an hızlı, güvenilir yanıtlar ve uzman tavsiyeleri alın. Anında sohbet edin, zahmetsizce öğrenin.";
+"onboarding_3_title" = "Her Alanda Kişisel Uzmanınız";
+"onboarding_3_message" = "Sağlıktan ilişkilere, eğitimden dil öğrenmeye kadar her alanda özel bir yapay zeka partneri bulun. Zahmetsizce daha fazlasını başarın.";
+"onboarding_4_title" = "Yolculuğunuza Başlamaya Hazır mısınız?";
+"onboarding_4_message" = "Farklı yapay zeka uzmanlarımızı keşfetmek ve kişiselleştirilmiş yolculuğunuza bugün başlamak için aşağıya dokunun.";
+
+"Skip" = "Atla";
+"Next" = "İleri";
+"Get Started" = "Başlayalım";
+
+//Daily Gift
+"daily_gift" = "🎉 Günlük Hediyeniz! 🎉";
+"claim_reward" = "Ödülü Topla!";

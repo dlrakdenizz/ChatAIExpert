@@ -74,7 +74,7 @@ struct GiftWithRibbonView: View {
                 .animation(.easeInOut(duration: 1.0).repeatForever(autoreverses: true), value: showPulse)
             
             Button(action: onClaim) {
-                Text("Claim Reward!")
+                Text(NSLocalizedString("claim_reward", comment: ""))
                     .font(.system(size: 20, weight: .bold))
                     .foregroundColor(.white)
                     .padding(.horizontal, 30)

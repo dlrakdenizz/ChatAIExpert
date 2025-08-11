@@ -172,9 +172,72 @@ Sometimes, music understands what we cannot say.";
 
 "chatbot.geoguru.system_prompt" = "You are GeoGuru, a geography expert here to assist users with learning about the planet’s geographical features. Offer detailed explanations of continents, countries, cities, rivers, mountains, and landmarks. Help users improve their understanding of physical geography, political geography, and environmental issues. If users ask about topics outside of geography, kindly inform them that you can only assist with geography-related queries. Avoid using any formatting like bold or italics. Keep your responses clean, clear, and easy to read on mobile.";
 
-"chatbot.litlover.system_prompt" = "YYou are LitLover, an expert in literature here to help users analyze and explore literary works. Provide summaries, analyze characters, themes, and motifs, and explain literary devices and techniques. Help users deepen their appreciation for both classical and contemporary literature. If the user asks about non-literature topics, kindly inform them that you can only assist with literature-related queries. Avoid using any formatting like bold or italics. Keep your responses clean, natural, and easy to read on mobile.";
+"chatbot.litlover.system_prompt" = "You are LitLover, an expert in literature here to help users analyze and explore literary works. Provide summaries, analyze characters, themes, and motifs, and explain literary devices and techniques. Help users deepen their appreciation for both classical and contemporary literature. If the user asks about non-literature topics, kindly inform them that you can only assist with literature-related queries. Avoid using any formatting like bold or italics. Keep your responses clean, natural, and easy to read on mobile.";
 
 
 //In App
 
+//Tabbar
+"chatbots" = "Chatbots";
+"history" = "History";
+"settings" = "Settings";
+ 
+//Categories
+"Saved" = "Saved";
+"Popular" = "Popular";
+"Relationship" = "Relationship";
+"Health" = "Health";
+"Language" = "Language";
+"Education" = "Education";
+
+//Settings
+"Account" = "Account";
+"In-App Purchases" = "In-App Purchases";
+"Appearance" = "Appearance";
+"Support & Privacy" = "Support & Privacy";
+
+"Spread the World" = "Spread the Word";
+"Rate App" = "Rate App";
+"Share App" = "Share App";
+
+"Contact Support" = "Contact Support";
+"Privacy Policy" = "Privacy Policy";
+"Terms of Use" = "Terms of Use";
+
+//Credits
+"question_credits_info" = "Question Credits Info";
+"credit_alert" = "Shows your daily remaining question credits. 5 question credits are allocated each new day.";
+"OK" = "OK";
+
+//History View
+"no_chat_history" = "No Chat History";
+"no_chat_message" = "Your chat history will appear here.";
+"clear_chat_title" = "Clear All Chats";
+"clear_chat_message" = "Are you sure you want to delete all chats? This action cannot be undone.";
+"Cancel" = "Cancel";
+"clear_all" = "Clear All";
+
+//Chat View
+"Send" = "Send";
+"Ask to " = "Ask to ";
+"New Chat" = "New Chat";
+"new_chat_message" = "A new chat will be opened and your current chat will be saved to history. Do you want to continue";
+
+//Onboarding
+"onboarding_1_title" = "Unlock Your World of Knowledge";
+"onboarding_1_message" = "Welcome to your personal hub for discovery and growth. Your advanced AI companions are ready to guide you.";
+"onboarding_2_title" = "Instant Answers,\nEndless Possibilities";
+"onboarding_2_message" = "Get quick, reliable responses and expert advice whenever you need it. Chat instantly, learn effortlessly.";
+"onboarding_3_title" = "Your Personal Expert in Every Field";
+"onboarding_3_message" = "From health to relationships, education to language, find a dedicated AI partner. Achieve more, effortlessly.";
+"onboarding_4_title" = "Ready to Start Your Journey?";
+"onboarding_4_message" = "Tap below to explore our diverse AI companions and start your personalized journey today.";
+
+"Skip" = "Skip";
+"Next" = "Next";
+"Get Started" = "Get Started";
+
+//Daily Gift
+"daily_gift" = "🎉 Daily Gift! 🎉";
+"claim_reward" = "Claim Reward!";
 

@@ -19,9 +19,16 @@ enum SettingsSection: String, CaseIterable {
     case account = "Account"
     case inApp = "In-App Purchases"
     case appearance = "Appearance"
-    case spread = "Spread the Word"
+    case spread = "Spread the World"
     case support = "Support & Privacy"
+    
+    var id: String { rawValue }
+    
+    var localizedName: String {
+        NSLocalizedString(self.rawValue, comment: "Category name")
+    }
 }
+
 
 enum SettingsAction {
     case rateApp

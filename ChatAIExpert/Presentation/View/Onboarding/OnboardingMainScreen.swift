@@ -16,29 +16,29 @@ struct OnboardingMainScreen: View {
     let onboardingData = [
         OnboardingItem(
             image: "dr_love",
-            title:  "Unlock Your World of Knowledge",
-            description: "Welcome to your personal hub for discovery and growth. Your advanced AI companions are ready to guide you.",
+            title:  NSLocalizedString("onboarding_1_title", comment: ""),
+            description: NSLocalizedString("onboarding_1_message", comment: ""),
             accentColor: Color(hex: "6366F1"), // Indigo
             rotation: 15
         ),
         OnboardingItem(
             image: "astro_agent",
-            title: "Instant Answers,\nEndless Possibilities",
-            description: "Get quick, reliable responses and expert advice whenever you need it. Chat instantly, learn effortlessly.",
+            title: NSLocalizedString("onboarding_2_title", comment: ""),
+            description: NSLocalizedString("onboarding_2_message", comment: ""),
             accentColor: Color(hex: "3B82F6"), // Blue
             rotation: -10
         ),
         OnboardingItem(
             image: "flirty",
-            title: "Your Personal Expert in Every Field",
-            description: " From health to relationships, education to language, find a dedicated AI partner. Achieve more, effortlessly.",
+            title: NSLocalizedString("onboarding_3_title", comment: ""),
+            description: NSLocalizedString("onboarding_3_message", comment: ""),
             accentColor: Color(hex: "EF4444"), // Purple
             rotation: 8
         ),
         OnboardingItem(
             image: "splash_foto",
-            title: "Ready to Start Your Journey?",
-            description: "Tap below to explore our diverse AI companions and start your personalized journey today.",
+            title: NSLocalizedString("onboarding_4_title", comment: ""),
+            description: NSLocalizedString("onboarding_4_message", comment: ""),
             accentColor: Color(hex: "EC4899"), // Pink
             rotation: -12
         )

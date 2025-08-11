@@ -111,13 +111,13 @@ struct ChatView: View {
             } message: {
                 Text(creditsAlertMessage)
             }
-            .alert("New Chat", isPresented: $showNewChatConfirmation) {
-                Button("Cancel", role: .cancel) { }
-                Button("OK") {
+            .alert(NSLocalizedString("New Chat", comment: ""), isPresented: $showNewChatConfirmation) {
+                Button(NSLocalizedString("Cancel", comment: ""), role: .cancel) { }
+                Button(NSLocalizedString("OK", comment: "")) {
                     viewModel.clearMessages()
                 }
             } message: {
-                Text("A new chat will be opened and your current chat will be saved to history. Do you want to continue?")
+                Text(NSLocalizedString("new_chat_message", comment: ""))
             }
         }
     }

@@ -44,7 +44,7 @@ struct SettingsView: View {
             }
             .toolbar {
                 ToolbarItem(placement: .principal) {
-                    Text("Settings")
+                    Text(NSLocalizedString("settings", comment: ""))
                         .font(.system(size: 18, weight: .bold))
                         .foregroundColor(.black)
                 }

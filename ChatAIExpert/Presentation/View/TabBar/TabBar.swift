@@ -49,10 +49,10 @@ struct TabBar: View {
             .tag(TabBarItem.history)
         }
         .background(Color(.systemBackground))
-        .alert("Question Credits Info", isPresented: $showQuestionInfoAlert) {
+        .alert(NSLocalizedString("question_credits_info", comment: ""), isPresented: $showQuestionInfoAlert) {
             Button("OK", role: .cancel) { }
         } message: {
-            Text("Shows your daily remaining question credits. 5 question credits are allocated each new day.")
+            Text(NSLocalizedString("credit_alert", comment: ""))
         }
         .onAppear {
             updateQuestionCredits()

@@ -22,7 +22,7 @@ struct SettingsSectionView: View {
     }
     
     private var sectionHeader: some View {
-        Text(section.rawValue)
+        Text(section.localizedName)
             .font(.system(size: 20, weight: .bold))
             .foregroundColor(.black)
             .padding(.top, SettingsUI.sectionSpacing)

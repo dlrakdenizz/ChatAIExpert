@@ -31,7 +31,7 @@ struct CustomInputChatView: View {
                     .frame(width: 40, height: 40)
                 
                 VStack(alignment: .leading, spacing: 2) {
-                    TextField("Ask to \(chatbot.title)...", text: $text, axis: .vertical)
+                    TextField("\(NSLocalizedString("Ask to ", comment: "")) \(chatbot.title)...", text: $text, axis: .vertical)
                         .textFieldStyle(PlainTextFieldStyle())
                         .font(.body)
                         .frame(minHeight: 30)
@@ -53,7 +53,7 @@ struct CustomInputChatView: View {
                     action()
                     text = ""
                 }, label: {
-                    Text("Send")
+                    Text(NSLocalizedString("Send", comment: ""))
                         .bold()
                         .foregroundStyle(viewModel.isResponding ? Color.gray : Color.black)
                 })

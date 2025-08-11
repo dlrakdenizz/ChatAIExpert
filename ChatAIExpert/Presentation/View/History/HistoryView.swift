@@ -29,9 +29,9 @@ struct HistoryView: View {
         .overlay {
             if viewModel.chatHistories.isEmpty {
                 ContentUnavailableView(
-                    "No Chat History",
+                    NSLocalizedString("no_chat_history", comment: ""),
                     systemImage: "clock.arrow.circlepath",
-                    description: Text("Your chat history will appear here")
+                    description: Text(NSLocalizedString("no_chat_message", comment: ""))
                 )
             }
         }
@@ -59,13 +59,13 @@ struct HistoryView: View {
         } message: {
             Text("Are you sure you want to delete this chat? This action cannot be undone.")
         }
-        .alert("Clear All Chats", isPresented: $showClearAllConfirmation) {
-            Button("Cancel", role: .cancel) { }
-            Button("Clear All", role: .destructive) {
+        .alert(NSLocalizedString("clear_chat_title", comment: ""), isPresented: $showClearAllConfirmation) {
+            Button(NSLocalizedString("Cancel", comment: ""), role: .cancel) { }
+            Button(NSLocalizedString("clear_all", comment: ""), role: .destructive) {
                 viewModel.clearAllHistories()
             }
         } message: {
-            Text("Are you sure you want to delete all chats? This action cannot be undone.")
+            Text(NSLocalizedString("clear_chat_message", comment: ""))
         }
     }
 }

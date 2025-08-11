@@ -100,14 +100,14 @@ final class SettingsViewModel: ObservableObject {
     
     private func setupItems() {
         items[.spread] = [
-            SettingsItem(title: "Rate App", icon: "star", section: .spread, action: .rateApp),
-            SettingsItem(title: "Share App", icon: "square.and.arrow.up", section: .spread, action: .shareApp)
+            SettingsItem(title: NSLocalizedString("Rate App", comment: ""), icon: "star", section: .spread, action: .rateApp),
+            SettingsItem(title: NSLocalizedString("Share App", comment: ""), icon: "square.and.arrow.up", section: .spread, action: .shareApp)
         ]
         
         items[.support] = [
-            SettingsItem(title: "Contact Support", icon: "envelope.badge", section: .support, action: .contactSupport),
-            SettingsItem(title: "Privacy Policy", icon: "hand.raised", section: .support, action: .openPrivacy),
-            SettingsItem(title: "Terms of Use", icon: "doc.text", section: .support, action: .openTerms)
+            SettingsItem(title: NSLocalizedString("Contact Support", comment: ""), icon: "envelope.badge", section: .support, action: .contactSupport),
+            SettingsItem(title: NSLocalizedString("Privacy Policy", comment: ""), icon: "hand.raised", section: .support, action: .openPrivacy),
+            SettingsItem(title: NSLocalizedString("Terms of Use", comment: ""), icon: "doc.text", section: .support, action: .openTerms)
         ]
     }
 }
