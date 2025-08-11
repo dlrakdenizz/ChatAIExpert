@@ -30,10 +30,24 @@ struct CustomInputChatView: View {
                 AddView(isImagePickerPresented: $isImagePickerPresented, isCameraPresented: $isCameraPresented)
                     .frame(width: 40, height: 40)
                 
-                TextField("Ask to \(chatbot.title)...", text: $text, axis: .vertical)
-                    .textFieldStyle(PlainTextFieldStyle())
-                    .font(.body)
-                    .frame(minHeight: 30)
+                VStack(alignment: .leading, spacing: 2) {
+                    TextField("Ask to \(chatbot.title)...", text: $text, axis: .vertical)
+                        .textFieldStyle(PlainTextFieldStyle())
+                        .font(.body)
+                        .frame(minHeight: 30)
+                        .onChange(of: text) { newValue in
+                            if newValue.count > 300 {
+                                text = String(newValue.prefix(300))
+                            }
+                        }
+                    
+                    if text.count > 0 {
+                        Text("\(text.count)/300")
+                            .font(.caption2)
+                            .foregroundColor(text.count > 290 ? .red : .gray)
+                            .padding(.leading, 4)
+                    }
+                }
                 
                 Button(action: {
                     action()
