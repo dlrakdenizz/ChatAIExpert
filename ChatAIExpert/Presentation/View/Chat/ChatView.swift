@@ -17,9 +17,10 @@ struct ChatView: View {
     @StateObject private var keyboardManager = KeyboardManager()
     
     @State private var showCreditsAlert = false
-       @State private var creditsAlertMessage = ""
-       
-       private let settingsRepository = SettingsRepository()
+    @State private var creditsAlertMessage = ""
+    @State private var showNewChatConfirmation = false
+    
+    private let settingsRepository = SettingsRepository()
     
     @State private var isShareSheetPresented = false
     
@@ -87,11 +88,12 @@ struct ChatView: View {
                         }
                         
                         Button(action: {
-                            viewModel.clearMessages()
+                            showNewChatConfirmation = true
                         }) {
                             Image(systemName: "square.and.pencil")
-                                .foregroundColor(.black)
+                                .foregroundColor(viewModel.isResponding ? .gray : .black)
                         }
+                        .disabled(viewModel.isResponding)
                     }
                 }
             }
@@ -105,20 +107,29 @@ struct ChatView: View {
                 ShareSheet(activityItems: [viewModel.shareText])
             }
             .alert("Question Credit!", isPresented: $showCreditsAlert) {
-                           Button("OK") { }
-                       } message: {
-                           Text(creditsAlertMessage)
-                       }
+                Button("OK") { }
+            } message: {
+                Text(creditsAlertMessage)
+            }
+            .alert("New Chat", isPresented: $showNewChatConfirmation) {
+                Button("Cancel", role: .cancel) { }
+                Button("OK") {
+                    viewModel.clearMessages()
+                }
+            } message: {
+                Text("A new chat will be opened and your current chat will be saved to history. Do you want to continue?")
+            }
         }
     }
+    
     func sendMessage() {
         let currentCredits = settingsRepository.getQuestionCredits()
                 
-                if currentCredits <= 0 {
-                    creditsAlertMessage = "You have used up your question limit! Please try again tomorrow!"
-                    showCreditsAlert = true
-                    return
-                }
+        if currentCredits <= 0 {
+            creditsAlertMessage = "You have used up your question limit! Please try again tomorrow!"
+            showCreditsAlert = true
+            return
+        }
         
         if let image = selectedImage {
             viewModel.sendMessage(messageText, image: image)
