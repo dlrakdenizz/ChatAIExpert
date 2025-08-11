@@ -15,6 +15,7 @@ final class SettingsViewModel: ObservableObject {
     @Published var items: [SettingsSection: [SettingsItem]] = [:]
     @Published var showToast = false
     @Published var toastMessage = ""
+    @Published var showLanguageSelection = false
     
     private let getUserSettingsUseCase: GetUserSettingsUseCaseProtocol
     private let shareAppUseCase: ShareAppUseCaseProtocol
@@ -51,7 +52,13 @@ final class SettingsViewModel: ObservableObject {
             openPrivacyPolicy()
         case .openTerms:
             openTermsOfUse()
+        case .changeLanguage:
+            openLanguageSettings()
         }
+    }
+    
+    private func openLanguageSettings() {
+        showLanguageSelection = true
     }
     
     private func shareApp() {
@@ -99,6 +106,10 @@ final class SettingsViewModel: ObservableObject {
     }
     
     private func setupItems() {
+        items[.appearance] = [
+            SettingsItem(title: NSLocalizedString("Change Language", comment: ""), icon: "globe", section: .appearance, action: .changeLanguage)
+        ]
+        
         items[.spread] = [
             SettingsItem(title: NSLocalizedString("Rate App", comment: ""), icon: "star", section: .spread, action: .rateApp),
             SettingsItem(title: NSLocalizedString("Share App", comment: ""), icon: "square.and.arrow.up", section: .spread, action: .shareApp)

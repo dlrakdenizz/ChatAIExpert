@@ -49,6 +49,9 @@ struct SettingsView: View {
                         .foregroundColor(.black)
                 }
             }
+            .sheet(isPresented: $viewModel.showLanguageSelection) {
+                LanguageSelectionView()
+            }
         }
     }
     

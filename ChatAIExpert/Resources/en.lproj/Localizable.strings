@@ -193,13 +193,15 @@ Sometimes, music understands what we cannot say.";
 //Settings
 "Account" = "Account";
 "In-App Purchases" = "In-App Purchases";
+
 "Appearance" = "Appearance";
-"Support & Privacy" = "Support & Privacy";
+"Change Language" = "Change Language";
 
 "Spread the World" = "Spread the Word";
 "Rate App" = "Rate App";
 "Share App" = "Share App";
 
+"Support & Privacy" = "Support & Privacy";
 "Contact Support" = "Contact Support";
 "Privacy Policy" = "Privacy Policy";
 "Terms of Use" = "Terms of Use";

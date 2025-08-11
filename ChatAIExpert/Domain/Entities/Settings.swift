@@ -31,6 +31,7 @@ enum SettingsSection: String, CaseIterable {
 
 
 enum SettingsAction {
+    case changeLanguage
     case rateApp
     case shareApp
     case contactSupport
