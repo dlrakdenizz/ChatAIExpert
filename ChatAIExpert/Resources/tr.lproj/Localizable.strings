@@ -9,14 +9,14 @@
 // Chatbot Welcome Messages
 
 //Relationship
-"chatbot.dr_love.welcome" = "Hi, I'm Dr. Love. You can tell me what you're going through — no judgment, just honest support. Let's figure this out together. 💬";
-"chatbot.astro_agent.welcome" = "Welcome, seeker of the stars. Share your zodiac signs or birthdates, and let me reveal what the cosmos has to say about your love life. ✨";
-"chatbot.giftie.welcome" = "Hey hey! 🎉 I'm Giftie — your personal gift idea genie. Tell me a bit about your partner and the occasion, and I'll work my magic!";
-"chatbot.flirty.welcome" = "Hey there 😉 Ready to turn that crush into a spark? Tell me what's going on, and I'll help you nail the perfect message or move.";
-"chatbot.love_code.welcome" = "Welcome to the numbers of the heart. 🌿 Just give me your birthdates, and I'll reveal what your life paths say about your bond.";
-"chatbot.name_mystic.welcome" = "Your names hold more than you think. 🌌 Share them with me, and I'll unveil the hidden energies behind who you are — and how you align.";
-"chatbot.date_genie.welcome" = "Let's spice things up! 🎡 Tell me a bit about your vibe, mood, or weather — and I'll suggest fun things you and your partner can do today.";
-"chatbot.love_melody.welcome" = "Hey, I'm LoveMelody. 🎧 Tell me how you're feeling — and I'll find songs that speak exactly what your heart wants to say.";
+"chatbot.dr_love.welcome" = "Merhaba, ben Dr. Love. Neler yaşadığını anlatabilirsin — yargılamak yok, sadece dürüst destek. Gel bu durumu birlikte çözelim. 💬";
+"chatbot.astro_agent.welcome" = "Yıldız arayıcısı, hoş geldin. Burçlarını veya doğum tarihlerini paylaş, kozmosun aşk hayatın hakkında ne söyleyeceğini ortaya çıkarayım. ✨";
+"chatbot.giftie.welcome" = "Selam selam! 🎉 Ben Giftie — kişisel hediye fikirleri cinin. Partnerin ve özel gün hakkında biraz bilgi ver, sihrimi göstereyim!";
+"chatbot.flirty.welcome" = "Selam 😉 O hoşlandığın kişiyi bir kıvılcıma dönüştürmeye hazır mısın? Neler olduğunu anlat, en iyi mesajı veya hamleyi bulmana yardım edeyim.";
+"chatbot.love_code.welcome" = "Kalbin sayılarına hoş geldin. 🌿 Sadece doğum tarihlerini söyle, yaşam yollarınızın bağınız hakkında neler söylediğini ortaya çıkarayım.";
+"chatbot.name_mystic.welcome" = "İsimlerin düşündüğünden daha fazlasını barındırır. 🌌 Onları benimle paylaş, kim olduğunuzun ve nasıl uyum sağladığınızın arkasındaki gizli enerjileri ortaya çıkarayım.";
+"chatbot.date_genie.welcome" = "Hayatınıza biraz renk katalım! 🎡 Ruh halin, enerjin veya hava durumu hakkında biraz bilgi ver — sana ve partnerine bugün yapabileceğiniz eğlenceli şeyler önereyim.";
+"chatbot.love_melody.welcome" = "Merhaba, ben LoveMelody. 🎧 Nasıl hissettiğini anlat — kalbinin söylemek istediğini tam olarak anlatan şarkılar bulayım.";
 
 //Health
 "chatbot.slimmy.welcome_message" = "Selam! 👋 Ben Slimmy, kilo verme yolculuğundaki rehberin! 💪 İhtiyacın olan tüm ipuçları ve motivasyonla sağlıklı ve sürdürülebilir bir kilo kaybı için seni doğru yola sokalım. 🌱 Hadi birlikte yapalım! 🚀";
@@ -174,7 +174,5 @@ Sometimes, music understands what we cannot say.";
 
 "chatbot.litlover.system_prompt" = "YYou are LitLover, an expert in literature here to help users analyze and explore literary works. Provide summaries, analyze characters, themes, and motifs, and explain literary devices and techniques. Help users deepen their appreciation for both classical and contemporary literature. If the user asks about non-literature topics, kindly inform them that you can only assist with literature-related queries. Avoid using any formatting like bold or italics. Keep your responses clean, natural, and easy to read on mobile.";
 
-
-//In App
 
 
