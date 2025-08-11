@@ -26,10 +26,10 @@ struct TabBar: View {
         TabView(selection: $viewModel.selectedTab) {
             NavigationStack {
                 ChatbotsView()
-                    .navigationTitle(TabBarItem.chatbots.name)
-                    .navigationBarTitleDisplayMode(.inline)
                     .toolbar { toolbarContent() }
-                    
+                    .navigationBarTitleDisplayMode(.large)
+                
+                
             }
             .tabItem {
                 Label(TabBarItem.chatbots.name, systemImage: TabBarItem.chatbots.icon)
@@ -38,9 +38,9 @@ struct TabBar: View {
             
             NavigationStack {
                 HistoryView()
-                    .navigationTitle(TabBarItem.history.name)
-                    .navigationBarTitleDisplayMode(.inline)
                     .toolbar { toolbarContent() }
+                    .navigationBarTitleDisplayMode(.large)
+                
                 
             }
             .tabItem {
@@ -93,24 +93,54 @@ extension TabBar {
     @ToolbarContentBuilder
     private func toolbarContent() -> some ToolbarContent {
         ToolbarItem(placement: .navigationBarLeading) {
-            NavigationLink(destination: SettingsView()) {
-                Image(systemName: "gearshape")
-                    .foregroundColor(.black)
+            HStack(spacing: 12) {
+                Text(getCurrentTabTitle())
+                    .font(.title2)
+                    .fontWeight(.semibold)
+                    .foregroundColor(.primary)
             }
         }
         
         ToolbarItem(placement: .navigationBarTrailing) {
-            HStack(spacing: 4) {
+            HStack(spacing: 2) {
                 Button(action: {
                     showQuestionInfoAlert = true
                 }) {
-                    Image(systemName: "questionmark.circle.fill")
-                        .foregroundColor(.green)
-                    Text("\(questionCredits)")
+                    HStack(spacing: 4) {
+                        Image(systemName: "sparkles")
+                            .symbolRenderingMode(.multicolor)
+                            .font(.system(size: 14, weight: .medium))
+                        
+                        Text("\(questionCredits)")
+                            .font(.system(size: 14, weight: .medium))
+                            .foregroundColor(.primary)
+                    }
+                    .padding(.horizontal, 8)
+                    .padding(.vertical, 4)
+                    .background(
+                        RoundedRectangle(cornerRadius: 8, style: .continuous)
+                            .fill(Color(.systemGray6))
+                    )
+                }
+                
+                NavigationLink(destination: SettingsView()) {
+                    Image(systemName: "gearshape")
                         .font(.system(size: 16, weight: .medium))
-                        .foregroundColor(.black)
+                        .foregroundColor(.primary)
+                        .padding(2)
                 }
             }
+        }
+    }
+    
+    private func getCurrentTabTitle() -> String {
+        switch viewModel.selectedTab {
+        case .chatbots:
+            return TabBarItem.chatbots.name
+        case .history:
+            return TabBarItem.history.name
+        default:
+            return ""
         }
     }
 }
