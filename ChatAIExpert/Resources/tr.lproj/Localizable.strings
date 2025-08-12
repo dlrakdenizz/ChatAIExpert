@@ -197,6 +197,10 @@ Bazen müzik, söyleyemediklerimizi anlar.";
 
 "Appearance" = "Görünüm";
 "Change Language" = "Dil Değiştirin";
+"Change" = "Değiştir";
+"Select Language" = "Dil Seçin";
+"language_change_info" = "Dil değişikliği uygulamayı yeniden başlatacak";
+"language_change_restart_message" = "Dil değişikliği uygulanması için uygulama yeniden başlatılacak. Devam etmek istediğinizden emin misiniz?";
 
 "Spread the World" = "Duyurun";
 "Rate App" = "Uygulamayı Değerlendirin";

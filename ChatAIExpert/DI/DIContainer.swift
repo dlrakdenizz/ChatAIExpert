@@ -13,6 +13,11 @@ class DIContainer {
     
     private init() {}
     
+    // **MARK: - Managers**
+    lazy var languageManager: LanguageManager = {
+        LanguageManager.shared
+    }()
+    
     // **MARK: - Network**
     lazy var networkManager: NetworkManagerProtocol = {
         NetworkManager()

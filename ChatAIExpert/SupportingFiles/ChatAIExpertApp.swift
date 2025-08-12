@@ -24,6 +24,9 @@ struct ChatAIExpertApp: App {
     
     init() {
         
+        // Initialize Language Manager to detect device language
+        _ = LanguageManager.shared
+        
         // Configure TabBar appearance
         UITabBar.configureAppearance()
   

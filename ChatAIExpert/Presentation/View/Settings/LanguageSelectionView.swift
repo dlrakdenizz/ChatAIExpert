@@ -9,7 +9,9 @@ import SwiftUI
 
 struct LanguageSelectionView: View {
     @Environment(\.dismiss) private var dismiss
-    @AppStorage("selectedLanguage") private var selectedLanguage: String = "en"
+    @StateObject private var languageManager = LanguageManager.shared
+    @State private var showingLanguageChangeAlert = false
+    @State private var selectedLanguageToChange: String = ""
     
     var body: some View {
         VStack(spacing: 0) {
@@ -21,9 +23,17 @@ struct LanguageSelectionView: View {
                 .padding(.bottom, 16)
             
             // Title
-            Text("Select Language")
+            Text(NSLocalizedString("Select Language", comment: ""))
                 .font(.system(size: 20, weight: .bold))
                 .foregroundColor(.black)
+                .padding(.bottom, 8)
+            
+            // Info text
+            Text(NSLocalizedString("language_change_info", comment: ""))
+                .font(.system(size: 14))
+                .foregroundColor(.secondary)
+                .multilineTextAlignment(.center)
+                .padding(.horizontal, 20)
                 .padding(.bottom, 24)
             
             // Language options
@@ -31,9 +41,10 @@ struct LanguageSelectionView: View {
                 LanguageOptionRow(
                     flag: "🇺🇸",
                     language: "English",
-                    isSelected: selectedLanguage == "en",
+                    isSelected: languageManager.currentLanguage == "en",
                     onTap: {
-                        selectedLanguage = "en"
+                        selectedLanguageToChange = "en"
+                        showingLanguageChangeAlert = true
                     }
                 )
                 
@@ -43,9 +54,10 @@ struct LanguageSelectionView: View {
                 LanguageOptionRow(
                     flag: "🇹🇷",
                     language: "Türkçe",
-                    isSelected: selectedLanguage == "tr",
+                    isSelected: languageManager.currentLanguage == "tr",
                     onTap: {
-                        selectedLanguage = "tr"
+                        selectedLanguageToChange = "tr"
+                        showingLanguageChangeAlert = true
                     }
                 )
             }
@@ -60,6 +72,14 @@ struct LanguageSelectionView: View {
         .background(Color(.systemGray6))
         .presentationDetents([.height(200)])
         .presentationDragIndicator(.hidden)
+        .alert(NSLocalizedString("Change Language", comment: ""), isPresented: $showingLanguageChangeAlert) {
+            Button(NSLocalizedString("Cancel", comment: ""), role: .cancel) { }
+            Button(NSLocalizedString("Change", comment: "")) {
+                languageManager.changeLanguage(to: selectedLanguageToChange)
+            }
+        } message: {
+            Text(NSLocalizedString("language_change_restart_message", comment: ""))
+        }
     }
 }
 

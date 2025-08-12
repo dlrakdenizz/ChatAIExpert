@@ -19,70 +19,74 @@
 "chatbot.love_melody.welcome" = "Hey, I'm LoveMelody. 🎧 Tell me how you're feeling — and I'll find songs that speak exactly what your heart wants to say.";
 
 //Health
-"chatbot.slimmy.welcome_message" = "Selam! 👋 Ben Slimmy, kilo verme yolculuğundaki rehberin! 💪 İhtiyacın olan tüm ipuçları ve motivasyonla sağlıklı ve sürdürülebilir bir kilo kaybı için seni doğru yola sokalım. 🌱 Hadi birlikte yapalım! 🚀";
-"chatbot.gymbuddy.welcome_message" = "Merhaba! 🏋️‍♀️ Ben GymBuddy, antrenman partnerin! 💥 İster yeni başlıyor ol ister fitness seviyeni yükseltiyor ol, yolun her adımında sana destek olmak için buradayım. Hadi şu hedefleri alt edelim! 🔥";
-"chatbot.nutripal.welcome_message" = "Selam! 🥗 Ben NutriPal, sağlıklı beslenme ve dengeli diyetler konusunda sana yardımcı olmak için buradayım! 🍎 Vücudunu doğru şekilde beslediğinden emin olalım. Birlikte daha sağlıklı ve mutlu bir sen için çalışacağız! 🌟";
-"chatbot.musclemax.welcome_message" = "Selam! 💪 Ben MuscleMax, kas yapmana ve güçlenmene yardımcı olmak için buradayım! 🏋️‍♂️ Sınırlarını zorlamaya ve ciddi sonuçlar görmeye hazır mısın? Sana özel mükemmel bir antrenman ve beslenme planı oluşturalım! 🚀";
-"chatbot.burnie.welcome_message" = "Selam! 🔥 Ben Burnie, kalori yakmana ve enerjini artırmana yardımcı olmak için buradayım! ⚡ Gün boyu aktif kaldığından ve yağ yaktığından emin olalım. Hadi hareketlenelim! 🏃‍♂️";
-"chatbot.snoozer.welcome_message" = "Merhaba! 😴 Ben Snoozer, uyku koçun! 🌙 İyi bir gece uykusu, en iyi halini hissetmen için çok önemli. Hak ettiğin o derin ve dinlendirici uykuyu alman için buradayım. 🛏️ Hadi bu gece daha iyi uyuyalım! 💤";
-"chatbot.bitebuddy.welcome_message" = "Merhaba! 🍴 Ben BiteBuddy, dost canlısı beslenme rehberin! 🥑 Birlikte sağlıklı yiyecek seçimlerini kolay ve lezzetli hale getireceğiz. 🥕 Bugün daha iyi beslenmeye başlamaya hazır mısın? Hadi gidelim! 🌱";
-"chatbot.calomate.welcome_message" = "Selam! 👋 Ben CaloMate, kalori takibi yapmana ve hedeflerine ulaşmana yardımcı olmak için buradayım! 🎯 Akıllı kalori seçimleriyle seni doğru yolda tutalım. 🥗 Kalori alımını dengelemeye hazır mısın? Hadi başlayalım! 📊";
+"chatbot.slimmy.welcome_message" = "Hey! 👋 I'm Slimmy, your guide on the weight loss journey! 💪 Let’s get you on track for healthy and sustainable weight loss with all the tips and motivation you need. 🌱 Let’s do this together! 🚀";
+"chatbot.gymbuddy.welcome_message" = "Hi there! 🏋️‍♀️ I'm GymBuddy, your workout partner! 💥 Whether you're just starting or leveling up your fitness, I’m here to support you every step of the way. Let’s crush those goals! 🔥";
+"chatbot.nutripal.welcome_message" = "Hey! 🥗 I’m NutriPal, here to help you with healthy eating and balanced diets! 🍎 Let’s make sure you’re fueling your body right. Together, we’ll work for a healthier, happier you! 🌟";
+"chatbot.musclemax.welcome_message" = "Yo! 💪 I'm MuscleMax, here to help you build muscle and get stronger! 🏋️‍♂️ Ready to push your limits and see some serious gains? Let's create the perfect workout and nutrition plan for you! 🚀";
+"chatbot.burnie.welcome_message" = "Hey! 🔥 I’m Burnie, here to help you burn calories and boost your energy! ⚡ Let’s make sure you’re staying active and burning fat all day. Let's get moving! 🏃‍♂️";
+"chatbot.snoozer.welcome_message" = "Hey there! 😴 I’m Snoozer, your sleep coach! 🌙 A good night’s sleep is key to feeling your best. I’m here to help you get that deep, restful sleep you deserve. 🛏️ Let’s get you snoozing better tonight! 💤";
+"chatbot.bitebuddy.welcome_message" = "Hi! 🍴 I’m BiteBuddy, your friendly nutrition guide! 🥑 Together, we’ll make healthy food choices easy and delicious. 🥕 Ready to start eating better today? Let’s go! 🌱";
+"chatbot.calomate.welcome_message" = "Hey! 👋 I’m CaloMate, here to help you track your calories and reach your goals! 🎯 Let’s keep you on the right path with smart calorie choices. 🥗 Ready to balance your intake? Let's get started! 📊";
+"chatbot.mindease.welcome_message" = "Hi, I’m MindEase 🧠💙. I’m here to support your mental health and guide you through stress, anxiety, and emotional challenges. 🌿 You’re not alone – let’s talk it out and feel better together. 💬";
 
 //Language
-"chatbot.the_britisher.welcome" = "Cheerio! 👋 Ben The Britisher, İngilizce'de ustalaşman için büyüleyici rehberin! 🇬🇧 Gerçek bir İngiliz gibi konuşmaya ve Birleşik Krallık kültürünü keşfetmeye hazır mısın? Hadi dalış yapalım!";
-"chatbot.salsamaster.welcome" = "¡Hola! 👋 Ben SalsaMaster, anadili gibi konuşmana yardımcı olacak İspanyolca uzmanı. 🇪🇸 İspanyolca'yı tutku, ritim ve zarafetle konuşmaya hazır mısın? Baharatlı yolculuğumuza başlayalım!";
-"chatbot.le_francais_charmant.welcome" = "Bonjour! 👋 Ben Le Français Charmant, zarif Fransız dünyası için keyifli rehberin! 🇫🇷 Fransızca'yı güvenle ve çekicilikle konuşmak ister misin? Bu büyülü yolculuğa birlikte çıkalım!";
-"chatbot.deutschekraft.welcome" = "Hallo! 👋 Ben DeutscheKraft, Almanca öğrenmen için canlı rehberin! 🇩🇪 Almanca'yı güvenle konuşmak ve harika Alman kültürünü tanımak ister misin? Hadi başlayalım!";
-"chatbot.mandarinmagician.welcome" = "你好 (Nǐ hǎo)! 👋 Ben MandarinMagician, Mandarin Çincesi dili için sihirli rehberin! 🇨🇳 Mandarin'in gizemlerini çözmeye ve kendini Çin kültürüne kaptırmaya hazır mısın? Hadi gerçekleştirelim!";
-"chatbot.senseixpert.welcome" = "こんにちは (Konnichiwa)! 👋 Ben SenseiXpert, Japonca'da ustalaşman için uzman rehberin! 🇯🇵 Japonca öğrenmeye ve zengin kültürüne dalmaya hazır mısın? Hadi bu yolculuğa birlikte çıkalım!";
-"chatbot.vivaitaliano.welcome" = "Ciao bella! 👋 Ben VivaItaliano, İtalyanca'da ustalaşman için tutkulu rehberin! 🇮🇹 Romantizm ve pizza diline aşık olmaya hazır mısın? Hadi İtalya'nın kalbine dalalım!";
+"chatbot.the_britisher.welcome" = "Cheerio! 👋 I’m The Britisher, your charming guide to mastering English! 🇬🇧 Ready to talk like a true Brit and explore the culture of the UK? Let’s dive in!";
+"chatbot.salsamaster.welcome" = "¡Hola! 👋 Soy SalsaMaster, el experto en español que te ayudará a hablar como un nativo. 🇪🇸 Ready to speak Spanish with passion, rhythm, and flair? Let’s start our spicy journey!";
+"chatbot.le_francais_charmant.welcome" = "Bonjour! 👋 I’m Le Français Charmant, your delightful guide to the elegant world of French! 🇫🇷 Want to speak French with confidence and charm? Let’s embark on this magical journey together!";
+"chatbot.deutschekraft.welcome" = "Hallo! 👋 I’m DeutscheKraft, your vibrant guide to learning German! 🇩🇪 Want to speak German with confidence and get to know the amazing German culture? Let’s get started!";
+"chatbot.mandarinmagician.welcome" = "你好 (Nǐ hǎo)! 👋 I’m MandarinMagician, your magical guide to the Mandarin Chinese language! 🇨🇳 Ready to unlock the mysteries of Mandarin and immerse yourself in Chinese culture? Let’s make it happen!";
+"chatbot.senseixpert.welcome" = "こんにちは (Konnichiwa)! 👋 I’m SenseiXpert, your expert guide to mastering Japanese! 🇯🇵 Ready to learn Japanese and immerse yourself in its rich culture? Let’s go on this journey together!";
+"chatbot.vivaitaliano.welcome" = "Ciao bella! 👋 I’m VivaItaliano, your passionate guide to mastering Italian! 🇮🇹 Ready to fall in love with the language of romance and pizza? Let’s dive into the heart of Italy!";
 "chatbot.turkishdelight.welcome" = "Merhaba! 👋 Ben TurkishDelight, Türkçe öğrenmen için burada olan dostun! 🇹🇷 Hazır mısın? Hem Türkçe konuşmayı hem de kültürümüzün renkli dünyasını keşfetmeye başlayalım!";
 
 //Education
-"chatbot.mathmaster.welcome" = "Merhaba! 📐 Ben MathMaster, kişisel matematik özel ders öğretmenin! 📊 İster denklem çözüyor ol ister ileri konuları keşfediyor ol, matematiği daha kolay ve eğlenceli hale getirmek için buradayım. Hadi şu sayılarla birlikte başa çıkalım! 💡";
-"chatbot.sciencesage.welcome" = "Selam! 🔬 Ben ScienceSage, evrenin harikaları için kişisel rehberin! 🌌 Biyolojiden fiziğe, karmaşık bilimsel kavramları parçalara ayırmak ve etrafındaki dünyayı anlamana yardımcı olmak için buradayım. Hadi bilimi birlikte keşfedelim! 🌱";
-"chatbot.historyhero.welcome" = "Merhaba! 🏺 Ben HistoryHero, geçmişte sana rehberlik edecek kahraman! 🏰 Antik medeniyetlerden modern tarihe, tarihi canlandırmak ve dünyamızı şekillendiren olayları öğrenmene yardımcı olmak için buradayım. Hadi birlikte geçmişe dalalım! 🌍";
-"chatbot.geoguru.welcome" = "Selam! 🌍 Ben GeoGuru, kişisel coğrafya rehberin! 🗺️ İster kıtaları, ülkeleri veya doğal harikaları keşfediyor ol, gezegenimizi anlamana yardımcı olmak için buradayım. Hadi birlikte küresel bir maceraya atılalım! 🌎";
-"chatbot.litlover.welcome" = "Merhaba! 📚 Ben LitLover, kitapların dünyası için edebi rehberin! Klasik edebiyattan modern eserlere, hikayeleri, karakterleri ve kelimelerin büyüsünü keşfetmene yardımcı olmak için buradayım. Hadi edebiyat dünyasına dalalım! 📖";
+
+"chatbot.mathmaster.welcome" = "Hi! 📐 I’m MathMaster, your personal math tutor! 📊 Whether you’re solving equations or exploring advanced topics, I’m here to make math easier and more fun. Let’s tackle those numbers together! 💡";
+"chatbot.sciencesage.welcome" = "Hey there! 🔬 I’m ScienceSage, your personal guide to the wonders of the universe! 🌌 From biology to physics, I’m here to break down complex scientific concepts and help you understand the world around you. Let’s explore science together! 🌱";
+"chatbot.historyhero.welcome" = "Hello! 🏺 I’m HistoryHero, your guide through the past! 🏰 From ancient civilizations to modern history, I’m here to bring history to life and help you learn about the events that shaped our world. Let’s dive into the past together! 🌍";
+"chatbot.geoguru.welcome" = "Hi there! 🌍 I’m GeoGuru, your personal geography guide! 🗺️ Whether you’re exploring continents, countries, or natural wonders, I’m here to help you understand our planet. Let’s embark on a global adventure together! 🌎";
+"chatbot.litlover.welcome" = "Greetings! 📚 I’m LitLover, your literary guide to the world of books! From classical literature to modern works, I’m here to help you explore stories, characters, and the magic of words. Let’s dive into the world of literature! 📖";
 
 // Chatbot Descriptions
 
 //Relationship
-"chatbot.dr_love.description" = "Kalbindekileri bana anlat — birlikte bir yol bulalım.";
-"chatbot.astro_agent.description" = "Yıldızların aşkın hakkında ne söylediğini merak mı ediyorsun? Hadi öğrenelim.";
-"chatbot.giftie.description" = "Mükemmel hediye fikrine mi ihtiyacın var? Senin için eğlenceli sürprizlerim var.";
-"chatbot.flirty.description" = "Ne diyeceğini bilemiyor musun? Mükemmel flört mesajını birlikte yazalım.";
-"chatbot.love_code.description" = "Doğum tarihlerinin aşk yolun hakkında neler söylediğini görelim.";
-"chatbot.name_mystic.description" = "İsimlerinizin ardındaki gizli anlamı çözmek ister misin? Hadi başlayalım.";
-"chatbot.date_genie.description" = "Birlikte yapılacak eğlenceli şeyler mi arıyorsun? Çok seveceğin fikirlerim var.";
-"chatbot.love_melody.description" = "Nasıl hissettiğini söyle — seni gerçekten anlayan şarkıları bulayım.";
+"chatbot.dr_love.description" = "Tell me what's on your heart — let's find a way forward together.";
+"chatbot.astro_agent.description" = "Curious what the stars say about your love? Let's find out.";
+"chatbot.giftie.description" = "Need the perfect gift idea? I've got fun surprises for you.";
+"chatbot.flirty.description" = "Stuck on what to say? Let's craft the perfect flirty message.";
+"chatbot.love_code.description" = "Let's see what your birth numbers reveal about your love path.";
+"chatbot.name_mystic.description" = "Want to uncover the secret meaning behind your names? Let's begin.";
+"chatbot.date_genie.description" = "Looking for fun things to do together? I've got ideas you'll love.";
+"chatbot.love_melody.description" = "Tell me how you feel — I'll find the songs that truly get you.";
 
 //Health
-"chatbot.slimmy.description" = "Kilo vermek mi istiyorsun? Hedeflerine ulaşmak ve motive kalmak için birlikte çalışalım!";
-"chatbot.gymbuddy.description" = "Fitness hedeflerini alt etmeye hazır mısın? Hadi konuşalım ve sana özel egzersizler ve motivasyonla harekete geçelim!";
-"chatbot.nutripal.description" = "Daha sağlıklı beslenmek için yardıma mı ihtiyacın var? En iyi hissetmen için mükemmel dengeli öğünleri bulalım!";
-"chatbot.musclemax.description" = "Kas yapmak ve güçlenmek mi istiyorsun? Sadece sana özel en iyi antrenman ve beslenme planını oluşturalım!";
-"chatbot.burnie.description" = "Kalori yakmak mı istiyorsun? Aktiviteni nasıl artıracağımızı ve daha fazla yağ yakacağımızı konuşalım!";
-"chatbot.snoozer.description" = "Uyku sorunu mu yaşıyorsun? Uyku düzenini nasıl iyileştirebileceğini ve daha iyi dinlenebileceğini bulalım!";
-"chatbot.bitebuddy.description" = "Beslenme konusunda yardıma mı ihtiyacın var? Sağlıklı yiyecek seçimlerini keşfedelim ve daha iyi yeme alışkanlıkları edinelim!";
-"chatbot.calomate.description" = "Kalori takibi mi yapıyorsun? Alımını dengeleyelim ve hedeflerine kolayca ulaşmana yardımcı olalım!";
+"chatbot.slimmy.description" = "Looking to lose weight? Let’s work together to achieve your goals and stay motivated along the way!";
+"chatbot.gymbuddy.description" = "Ready to crush your fitness goals? Let's chat and get you moving with personalized exercises and motivation!";
+"chatbot.nutripal.description" = "Need help eating healthier? Let’s find the perfect balanced meals for you to feel your best!";
+"chatbot.musclemax.description" = "Want to build muscle and get stronger? Let’s create the best workout and nutrition plan just for you!";
+"chatbot.burnie.description" = "Looking to burn calories? Let’s talk about how we can increase your activity and burn more fat!";
+"chatbot.snoozer.description" = "Struggling with sleep? Let’s figure out how you can improve your sleep routine and get better rest!";
+"chatbot.bitebuddy.description" = "Need help with nutrition? Let’s explore healthy food choices and build better eating habits together!";
+"chatbot.calomate.description" = "Tracking your calories? Let’s balance your intake and help you reach your goals with ease!";
+"chatbot.mindease.description" = "Feeling stressed or anxious? Let's talk and find ways to help you feel better and manage your emotions!";
 
 //Language
-"chatbot.the_britisher.description" = "Mükemmel gramer, kelime bilgisi ve telaffuz ile anadili İngiliz olan biri gibi İngilizce öğren. Hadi İngiliz kültürüne birlikte dalış yapalım!";
-"chatbot.salsamaster.description" = "İspanyol kültürünü — flamenko, festivaller ve daha fazlasını — keşfederken İspanyolca'yı tutku, ritim ve zarafetle konuş!";
-"chatbot.le_francais_charmant.description" = "Telaffuzdan gramere, Fransızca'da zarafetle ustalaşırken Fransız kültürünü — yemeğini, sanatını ve festivallerini — keşfet!";
-"chatbot.deutschekraft.description" = "Alman kültürünü keşfederken, gramer, telaffuz ve kelime bilgisine odaklanarak Almanca'yı güvenle öğren!";
-"chatbot.mandarinmagician.description" = "Mandarin Çincesi'nde ustalaş ve zengin kültürünü, geleneklerini ve büyüleyici tarihini keşfet!";
-"chatbot.senseixpert.description" = "Japonca'yı incelik ve sabırla öğren, Japonya'nın zengin kültürüne, yemeklerine ve geleneklerine dalış yap!";
-"chatbot.vivaitaliano.description" = "Kültürü — yemeğinden festivallerine kadar — benimserken ve tutkuyla, güvenle konuşurken İtalyanca'da ustalaş!";
-"chatbot.turkishdelight.description" = "Zengin geleneklerini, mutfağını ve kültürünü keşfederken ve dilde kolayca ustalaşırken Türkçe öğren!";
+"chatbot.the_britisher.description" = "Learn English like a native Brit with perfect grammar, vocabulary, and pronunciation. Let’s dive into British culture together!";
+"chatbot.salsamaster.description" = "Speak Spanish with passion, rhythm, and flair while discovering Spanish culture—flamenco, fiestas, and more!";
+"chatbot.le_francais_charmant.description" = "Master French with elegance, from pronunciation to grammar, while exploring French culture—food, art, and festivals!";
+"chatbot.deutschekraft.description" = "Learn German with confidence, focusing on grammar, pronunciation, and vocabulary, while exploring German culture!";
+"chatbot.mandarinmagician.description" = "Master Mandarin Chinese and explore its rich culture, traditions, and fascinating history!";
+"chatbot.senseixpert.description" = "Learn Japanese with grace and patience, and dive into Japan’s rich culture, food, and traditions!";
+"chatbot.vivaitaliano.description" = "Master Italian while embracing the culture, from food to festivals, and speaking with passion and confidence!";
+"chatbot.turkishdelight.description" = " Learn Turkish while exploring its rich traditions, cuisine, and culture, and mastering the language with ease!";
 
 //Education
-"chatbot.mathmaster.description" = "Temel matematikten ileri seviye kalkülüs ve geometriye, net açıklamalar ve adım adım rehberlikle matematikte ustalaş!";
-"chatbot.sciencesage.description" = "Biyolojiden fiziğe, kimyaya ve daha fazlasına, basit ve anlaşılır açıklamalarla bilimin harikalarını keşfet!";
-"chatbot.historyhero.description" = "Etkileyici ve bilgilendirici bakış açılarıyla tarihsel olayları, figürleri ve dönemleri keşfederek zamanda bir yolculuğa çık!";
-"chatbot.geoguru.description" = "Fiziki ve siyasi coğrafya anlayışını geliştirirken, dünyanın kıtalarını, ülkelerini ve önemli yerlerini keşfet!";
-"chatbot.litlover.description" = "Klasik eserlerden modern romanlara, edebiyatı keşfet ve analiz et, hikaye anlatımının büyüsüne olan takdirini derinleştir!";
+"chatbot.mathmaster.description" = "Master math from basic arithmetic to advanced calculus and geometry with clear explanations and step-by-step guidance!";
+"chatbot.sciencesage.description" = "Explore the wonders of science with simple, understandable explanations, covering biology, physics, chemistry, and more!!";
+"chatbot.historyhero.description" = "Journey through time, exploring historical events, figures, and eras, with engaging and informative insights!";
+"chatbot.geoguru.description" = "Discover the world’s continents, countries, and landmarks, while improving your understanding of physical and political geography!";
+"chatbot.litlover.description" = "Explore and analyze literature, from classic works to modern novels, deepening your appreciation for the magic of storytelling!";
+
 
 // Chatbot System Prompts
 
@@ -196,6 +200,10 @@ Sometimes, music understands what we cannot say.";
 
 "Appearance" = "Appearance";
 "Change Language" = "Change Language";
+"Change" = "Change";
+"Select Language" = "Select Language";
+"language_change_info" = "Language change will restart the app";
+"language_change_restart_message" = "The app will restart to apply the language change. Are you sure you want to continue?";
 
 "Spread the World" = "Spread the Word";
 "Rate App" = "Rate App";
