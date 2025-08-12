@@ -37,7 +37,7 @@ struct LanguageSelectionView: View {
                 .padding(.bottom, 24)
             
             // Language options
-            VStack(spacing: 0) {
+            ScrollView() {
                 ForEach(Array(languageManager.getSupportedLanguages().enumerated()), id: \.offset) { index, language in
                     LanguageOptionRow(
                         flag: language.flag,

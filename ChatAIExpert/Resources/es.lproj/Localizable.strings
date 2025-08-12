@@ -155,9 +155,9 @@
 
 //Tabbar
 "chatbots" = "Chatbots";
-"history" = "Historial";
-"settings" = "Ajustes";
- 
+"history" = "History";
+"settings" = "Settings";
+ 
 //Categories
 "Saved" = "Guardados";
 "Popular" = "Populares";
@@ -177,7 +177,7 @@
 "language_change_info" = "El cambio de idioma reiniciará la aplicación";
 "language_change_restart_message" = "La aplicación se reiniciará para aplicar el cambio de idioma. ¿Seguro que quieres continuar?";
 
-"Spread the Word" = "Corre la voz";
+"Spread the World" = "Corre la voz";
 "Rate App" = "Valora la app";
 "Share App" = "Compartir la app";
 
@@ -222,3 +222,8 @@
 //Daily Gift
 "daily_gift" = "🎉 ¡Regalo diario! 🎉";
 "claim_reward" = "¡Reclamar recompensa!";
+
+
+
+
+
