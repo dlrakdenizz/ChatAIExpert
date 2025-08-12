@@ -11,6 +11,17 @@ import UIKit
 final class LanguageManager: ObservableObject {
     static let shared = LanguageManager()
     
+    // Supported languages with their display names and flags
+    static let supportedLanguages: [(code: String, name: String, flag: String)] = [
+        ("en", "English", "🇺🇸"),
+        ("tr", "Türkçe", "🇹🇷"),
+        ("de", "Deutsch", "🇩🇪"),
+        ("fr", "Français", "🇫🇷"),
+        ("it", "Italiano", "🇮🇹"),
+        ("es", "Español", "🇪🇸"),
+        ("ko", "한국어", "🇰🇷")
+    ]
+    
     @Published var currentLanguage: String {
         didSet {
             UserDefaults.standard.set(currentLanguage, forKey: "selectedLanguage")
@@ -27,7 +38,8 @@ final class LanguageManager: ObservableObject {
             // Get device language
             let deviceLanguage = Locale.current.language.languageCode?.identifier ?? "en"
             // Check if device language is supported, otherwise default to English
-            self.currentLanguage = ["en", "tr"].contains(deviceLanguage) ? deviceLanguage : "en"
+            let supportedCodes = Self.supportedLanguages.map { $0.code }
+            self.currentLanguage = supportedCodes.contains(deviceLanguage) ? deviceLanguage : "en"
             // Save device language as default
             UserDefaults.standard.set(self.currentLanguage, forKey: "selectedLanguage")
             UserDefaults.standard.set([self.currentLanguage], forKey: "AppleLanguages")
@@ -48,6 +60,18 @@ final class LanguageManager: ObservableObject {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             exit(0)
         }
+    }
+    
+    func getSupportedLanguages() -> [(code: String, name: String, flag: String)] {
+        return Self.supportedLanguages
+    }
+    
+    func getLanguageName(for code: String) -> String? {
+        return Self.supportedLanguages.first { $0.code == code }?.name
+    }
+    
+    func getLanguageFlag(for code: String) -> String? {
+        return Self.supportedLanguages.first { $0.code == code }?.flag
     }
 }
 

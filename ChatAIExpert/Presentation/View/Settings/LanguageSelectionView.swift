@@ -38,28 +38,22 @@ struct LanguageSelectionView: View {
             
             // Language options
             VStack(spacing: 0) {
-                LanguageOptionRow(
-                    flag: "🇺🇸",
-                    language: "English",
-                    isSelected: languageManager.currentLanguage == "en",
-                    onTap: {
-                        selectedLanguageToChange = "en"
-                        showingLanguageChangeAlert = true
+                ForEach(Array(languageManager.getSupportedLanguages().enumerated()), id: \.offset) { index, language in
+                    LanguageOptionRow(
+                        flag: language.flag,
+                        language: language.name,
+                        isSelected: languageManager.currentLanguage == language.code,
+                        onTap: {
+                            selectedLanguageToChange = language.code
+                            showingLanguageChangeAlert = true
+                        }
+                    )
+                    
+                    if index < languageManager.getSupportedLanguages().count - 1 {
+                        Divider()
+                            .padding(.horizontal, 20)
                     }
-                )
-                
-                Divider()
-                    .padding(.horizontal, 20)
-                
-                LanguageOptionRow(
-                    flag: "🇹🇷",
-                    language: "Türkçe",
-                    isSelected: languageManager.currentLanguage == "tr",
-                    onTap: {
-                        selectedLanguageToChange = "tr"
-                        showingLanguageChangeAlert = true
-                    }
-                )
+                }
             }
             .background(Color.white)
             .cornerRadius(16)
@@ -70,7 +64,7 @@ struct LanguageSelectionView: View {
         }
         .frame(maxWidth: .infinity)
         .background(Color(.systemGray6))
-        .presentationDetents([.height(200)])
+        .presentationDetents([.height(400)]) // Increased height to accommodate more languages
         .presentationDragIndicator(.hidden)
         .alert(NSLocalizedString("Change Language", comment: ""), isPresented: $showingLanguageChangeAlert) {
             Button(NSLocalizedString("Cancel", comment: ""), role: .cancel) { }
