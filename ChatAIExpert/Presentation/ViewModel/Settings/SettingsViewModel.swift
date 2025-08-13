@@ -86,12 +86,12 @@ final class SettingsViewModel: ObservableObject {
 
     
     private func openPrivacyPolicy() {
-        let urlString = "https://aliduman.tech/privacy-policy-ios"
+        let urlString = "https://dilaraakdenizpersonalweb.web.app/privacy-policy-ios.html"
         openURLUseCase.execute(urlString: urlString)
     }
     
     private func openTermsOfUse() {
-        let urlString = "https://aliduman.tech/privacy-policy-ios"
+        let urlString = "https://dilaraakdenizpersonalweb.web.app/privacy-policy-ios.html"
         openURLUseCase.execute(urlString: urlString)
     }
     

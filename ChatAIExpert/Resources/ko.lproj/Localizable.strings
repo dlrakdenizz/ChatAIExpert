@@ -156,6 +156,7 @@
 //In App
 
 //Tabbar
+"chatAI" = "ChatAI";
 "chatbots" = "챗봇";
 "history" = "히스토리";
 "settings" = "설정";

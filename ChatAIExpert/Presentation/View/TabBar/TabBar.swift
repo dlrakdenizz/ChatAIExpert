@@ -24,6 +24,8 @@ struct TabBar: View {
     
     var body: some View {
         TabView(selection: $viewModel.selectedTab) {
+            
+            
             NavigationStack {
                 ChatbotsView()
                     .toolbar { toolbarContent() }

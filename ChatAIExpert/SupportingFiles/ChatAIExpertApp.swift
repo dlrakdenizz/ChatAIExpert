@@ -21,6 +21,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 struct ChatAIExpertApp: App {
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    @State private var viewID = UUID()
     
     init() {
         
@@ -29,13 +30,17 @@ struct ChatAIExpertApp: App {
         
         // Configure TabBar appearance
         UITabBar.configureAppearance()
-  
+        
     }
     
     var body: some Scene {
         WindowGroup {
             SplashView()
                 .preferredColorScheme(.light)
+                .id(viewID)
+                .onReceive(NotificationCenter.default.publisher(for: .languageChanged)) { _ in
+                    viewID = UUID()
+                }
         }
     }
 }

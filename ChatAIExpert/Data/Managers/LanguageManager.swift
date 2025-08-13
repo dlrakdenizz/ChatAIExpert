@@ -54,12 +54,6 @@ final class LanguageManager: ObservableObject {
         
         // Post notification for language change
         NotificationCenter.default.post(name: .languageChanged, object: language)
-        
-        // For SwiftUI apps, we need to restart the app to apply language changes
-        // Give user a moment to see the confirmation
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            exit(0)
-        }
     }
     
     func getSupportedLanguages() -> [(code: String, name: String, flag: String)] {
