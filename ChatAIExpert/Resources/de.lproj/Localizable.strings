@@ -197,6 +197,7 @@ Manchmal versteht die Musik, was wir nicht sagen können.";
 
 "Appearance" = "Erscheinungsbild";
 "Change Language" = "Sprache ändern";
+
 "Change" = "Ändern";
 "Select Language" = "Sprache auswählen";
 "language_change_info" = "Ein Sprachwechsel startet die App neu";
@@ -207,6 +208,7 @@ Manchmal versteht die Musik, was wir nicht sagen können.";
 "Share App" = "App teilen";
 
 "Support & Privacy" = "Support & Datenschutz";
+"Our Team" = "Unser Team";
 "Contact Support" = "Support kontaktieren";
 "Privacy Policy" = "Datenschutzrichtlinie";
 "Terms of Use" = "Nutzungsbedingungen";

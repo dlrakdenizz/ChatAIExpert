@@ -37,4 +37,5 @@ enum SettingsAction {
     case contactSupport
     case openPrivacy
     case openTerms
+    case openTeam
 }

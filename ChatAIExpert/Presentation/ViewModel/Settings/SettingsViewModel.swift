@@ -54,6 +54,8 @@ final class SettingsViewModel: ObservableObject {
             openTermsOfUse()
         case .changeLanguage:
             openLanguageSettings()
+        case .openTeam:
+            openTeam()
         }
     }
     
@@ -82,6 +84,11 @@ final class SettingsViewModel: ObservableObject {
         if let url = URL(string: urlString) {
             openURLUseCase.execute(urlString: url.absoluteString)
         }
+    }
+
+    private func openTeam() {
+        let urlString = "https://dilaraakdenizpersonalweb.web.app/team.html"
+        openURLUseCase.execute(urlString: urlString)
     }
 
     
@@ -116,6 +123,7 @@ final class SettingsViewModel: ObservableObject {
         ]
         
         items[.support] = [
+            SettingsItem(title: NSLocalizedString("Our Team", comment: ""), icon: "person.2", section: .support, action: .openTeam),
             SettingsItem(title: NSLocalizedString("Contact Support", comment: ""), icon: "envelope.badge", section: .support, action: .contactSupport),
             SettingsItem(title: NSLocalizedString("Privacy Policy", comment: ""), icon: "hand.raised", section: .support, action: .openPrivacy),
             SettingsItem(title: NSLocalizedString("Terms of Use", comment: ""), icon: "doc.text", section: .support, action: .openTerms)

@@ -89,7 +89,8 @@ extension SettingsItem {
         "hand.raised": (.mint.opacity(0.1), .mint),
         "doc.text": (.cyan.opacity(0.1), .cyan),
         "moon.circle.fill": (.indigo.opacity(0.1), .indigo),
-        "questionmark.circle.fill": (.blue.opacity(0.1), .blue)
+        "questionmark.circle.fill": (.blue.opacity(0.1), .blue),
+        "person.2" : (.purple.opacity(0.1), .purple)
     ]
     
     var backgroundColor: Color {
