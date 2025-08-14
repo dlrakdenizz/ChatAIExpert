@@ -8,6 +8,10 @@
 import Foundation
 
 enum Chatbots : String, CaseIterable, Codable {
+    
+    //ChatAI
+    case chatAI
+    
     //Relationship
     case drLove
     case astroAgent
@@ -48,6 +52,7 @@ enum Chatbots : String, CaseIterable, Codable {
     
     var image : String {
         switch self {
+        case .chatAI : "chatAI"
         case .drLove : "dr_love"
         case .astroAgent : "astro_agent"
         case .giftie : "giftie"
@@ -82,6 +87,7 @@ enum Chatbots : String, CaseIterable, Codable {
     
     var title : String {
         switch self {
+        case .chatAI : "ChatAI"
         case .drLove : "DR. LOVE"
         case .astroAgent : "AstroAgent"
         case .giftie : "Giftie"
@@ -116,6 +122,7 @@ enum Chatbots : String, CaseIterable, Codable {
     
     var description : String {
         switch self {
+        case .chatAI : return localized("chatbot.chatAI.description")
         case .drLove : return localized("chatbot.dr_love.description")
         case .astroAgent : return localized("chatbot.astro_agent.description")
         case .giftie : return localized("chatbot.giftie.description")
@@ -151,6 +158,7 @@ enum Chatbots : String, CaseIterable, Codable {
     
     var welcomeMessage : String {
         switch self {
+        case .chatAI: return localized("chatbot.chatAI.welcome")
         case .drLove: return localized("chatbot.dr_love.welcome")
         case .astroAgent: return localized("chatbot.astro_agent.welcome")
         case .giftie: return localized("chatbot.giftie.welcome")
@@ -185,6 +193,7 @@ enum Chatbots : String, CaseIterable, Codable {
     
     var systemPrompts : String {
         switch self {
+        case .chatAI: return localized("chatbot.chatAI.system_prompt")
         case .drLove: return localized("chatbot.dr_love.system_prompt")
         case .astroAgent: return localized("chatbot.astro_agent.system_prompt")
         case .giftie: return localized("chatbot.giftie.system_prompt")

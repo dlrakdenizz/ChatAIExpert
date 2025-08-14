@@ -19,7 +19,7 @@ class ChatbotsRepository : ChatbotsRepositoryProtocol {
         case .saved:
             return SavedChatbotsManager.shared.getSavedChatbots()
         case .popular:
-            return allChatbots.filter { [.drLove, .flirty, .loveMelody, .slimmy, .gymbuddy, .salsaMaster, .turkishDelight, .mathMaster ].contains($0) }
+            return allChatbots.filter { [.chatAI, .drLove, .flirty, .loveMelody, .slimmy, .gymbuddy, .salsaMaster, .turkishDelight, .mathMaster ].contains($0) }
         case .relationship:
             return allChatbots.filter { [.drLove, .astroAgent, .giftie, .flirty, .loveCode, .nameMystic, .dateGenie, .loveMelody].contains($0) }
         case .health:
