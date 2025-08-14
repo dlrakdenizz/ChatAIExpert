@@ -10,6 +10,7 @@ import UIKit
 
 final class LanguageManager: ObservableObject {
     static let shared = LanguageManager()
+    @Published private(set) var currentBundle: Bundle = .main
     
     // Supported languages with their display names and flags
     static let supportedLanguages: [(code: String, name: String, flag: String)] = [
@@ -26,7 +27,7 @@ final class LanguageManager: ObservableObject {
         didSet {
             UserDefaults.standard.set(currentLanguage, forKey: "selectedLanguage")
             UserDefaults.standard.set([currentLanguage], forKey: "AppleLanguages")
-            UserDefaults.standard.synchronize()
+            updateBundle(for: currentLanguage)
         }
     }
     
@@ -43,17 +44,29 @@ final class LanguageManager: ObservableObject {
             // Save device language as default
             UserDefaults.standard.set(self.currentLanguage, forKey: "selectedLanguage")
             UserDefaults.standard.set([self.currentLanguage], forKey: "AppleLanguages")
-            UserDefaults.standard.synchronize()
         }
+        // Başlangıçta doğru bundle'ı yükle
+        updateBundle(for: currentLanguage)
     }
     
-    func changeLanguage(to language: String) {
-        guard currentLanguage != language else { return }
+    
+    func changeLanguage(to languageCode: String) {
+        guard currentLanguage != languageCode else { return }
         
-        currentLanguage = language
+        currentLanguage = languageCode // Bu, didSet bloğunu tetikleyerek bundle'ı güncelleyecektir.
         
-        // Post notification for language change
-        NotificationCenter.default.post(name: .languageChanged, object: language)
+        // Bu notification ÇOK ÖNEMLİ. View'ı yeniden çizdirmek için bunu kullanacağız.
+        NotificationCenter.default.post(name: .languageChanged, object: nil)
+    }
+    
+    private func updateBundle(for languageCode: String) {
+        guard let path = Bundle.main.path(forResource: languageCode, ofType: "lproj"),
+              let bundle = Bundle(path: path) else {
+            // Eğer bir sebepten ötürü ilgili dilin dosyası bulunamazsa, ana bundle'a dön.
+            self.currentBundle = .main
+            return
+        }
+        self.currentBundle = bundle
     }
     
     func getSupportedLanguages() -> [(code: String, name: String, flag: String)] {
@@ -69,7 +82,15 @@ final class LanguageManager: ObservableObject {
     }
 }
 
+
+
 // MARK: - Notification Names
 extension Notification.Name {
     static let languageChanged = Notification.Name("languageChanged")
+}
+
+// Global helper fonksiyonu da buraya koyabilirsin.
+func localized(_ key: String) -> String {
+    let bundle = LanguageManager.shared.currentBundle
+    return NSLocalizedString(key, bundle: bundle, comment: "")
 }

@@ -111,20 +111,20 @@ struct ChatView: View {
             } message: {
                 Text(creditsAlertMessage)
             }
-            .alert(NSLocalizedString("New Chat", comment: ""), isPresented: $showNewChatConfirmation) {
-                Button(NSLocalizedString("Cancel", comment: ""), role: .cancel) { }
-                Button(NSLocalizedString("OK", comment: "")) {
+            .alert(localized("New Chat"), isPresented: $showNewChatConfirmation) {
+                Button(localized("Cancel"), role: .cancel) { }
+                Button(localized("OK")) {
                     viewModel.clearMessages()
                 }
             } message: {
-                Text(NSLocalizedString("new_chat_message", comment: ""))
+                Text(localized("new_chat_message"))
             }
         }
     }
     
     func sendMessage() {
         let currentCredits = settingsRepository.getQuestionCredits()
-                
+        
         if currentCredits <= 0 {
             creditsAlertMessage = "You have used up your question limit! Please try again tomorrow!"
             showCreditsAlert = true

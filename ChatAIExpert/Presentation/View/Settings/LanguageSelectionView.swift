@@ -23,13 +23,13 @@ struct LanguageSelectionView: View {
                 .padding(.bottom, 16)
             
             // Title
-            Text(NSLocalizedString("Select Language", comment: ""))
+            Text(localized("Select Language"))
                 .font(.system(size: 20, weight: .bold))
                 .foregroundColor(.black)
                 .padding(.bottom, 8)
             
             // Info text
-            Text(NSLocalizedString("language_change_info", comment: ""))
+            Text(localized("language_change_info"))
                 .font(.system(size: 14))
                 .foregroundColor(.secondary)
                 .multilineTextAlignment(.center)
@@ -66,13 +66,13 @@ struct LanguageSelectionView: View {
         .background(Color(.systemGray6))
         .presentationDetents([.height(400)]) // Increased height to accommodate more languages
         .presentationDragIndicator(.hidden)
-        .alert(NSLocalizedString("Change Language", comment: ""), isPresented: $showingLanguageChangeAlert) {
-            Button(NSLocalizedString("Cancel", comment: ""), role: .cancel) { }
-            Button(NSLocalizedString("Change", comment: "")) {
+        .alert(localized("Change Language"), isPresented: $showingLanguageChangeAlert) {
+            Button(localized("Cancel"), role: .cancel) { }
+            Button(localized("Change")) {
                 languageManager.changeLanguage(to: selectedLanguageToChange)
             }
         } message: {
-            Text(NSLocalizedString("language_change_restart_message", comment: ""))
+            Text(localized("language_change_restart_message"))
         }
     }
 }

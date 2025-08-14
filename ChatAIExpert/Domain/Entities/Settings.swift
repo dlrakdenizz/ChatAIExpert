@@ -25,7 +25,7 @@ enum SettingsSection: String, CaseIterable {
     var id: String { rawValue }
     
     var localizedName: String {
-        NSLocalizedString(self.rawValue, comment: "Category name")
+        localized(self.rawValue)
     }
 }
 

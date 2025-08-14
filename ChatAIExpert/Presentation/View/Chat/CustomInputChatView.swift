@@ -32,21 +32,21 @@ struct CustomInputChatView: View {
                     .frame(width: 40, height: 40)
                 
                 VStack(alignment: .leading, spacing: 2) {
-                    TextField("\(NSLocalizedString("Ask to ", comment: "")) \(chatbot.title)...", text: $text, axis: .vertical)
+                    TextField("\(localized("Ask to ")) \(chatbot.title)...", text: $text, axis: .vertical)
                         .textFieldStyle(PlainTextFieldStyle())
                         .font(.body)
                         .frame(minHeight: 30)
                         .focused($isTextFieldFocused)
                         .onChange(of: text) { newValue in
-                            if newValue.count > 300 {
+                            if newValue.count > 1000 {
                                 text = String(newValue.prefix(300))
                             }
                         }
                     
                     if text.count > 0 {
-                        Text("\(text.count)/300")
+                        Text("\(text.count)/1000")
                             .font(.caption2)
-                            .foregroundColor(text.count > 290 ? .red : .gray)
+                            .foregroundColor(text.count > 990 ? .red : .gray)
                             .padding(.leading, 4)
                     }
                 }
@@ -56,7 +56,7 @@ struct CustomInputChatView: View {
                     text = ""
                     isTextFieldFocused = false
                 }, label: {
-                    Text(NSLocalizedString("Send", comment: ""))
+                    Text(localized("Send"))
                         .bold()
                         .foregroundStyle(viewModel.isResponding ? Color.gray : Color.black)
                 })

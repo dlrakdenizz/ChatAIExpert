@@ -16,29 +16,29 @@ struct OnboardingMainScreen: View {
     let onboardingData = [
         OnboardingItem(
             image: "dr_love",
-            title:  NSLocalizedString("onboarding_1_title", comment: ""),
-            description: NSLocalizedString("onboarding_1_message", comment: ""),
+            title:  localized("onboarding_1_title"),
+            description: localized("onboarding_1_message"),
             accentColor: Color(hex: "6366F1"), // Indigo
             rotation: 15
         ),
         OnboardingItem(
             image: "astro_agent",
-            title: NSLocalizedString("onboarding_2_title", comment: ""),
-            description: NSLocalizedString("onboarding_2_message", comment: ""),
+            title: localized("onboarding_2_title"),
+            description: localized("onboarding_2_message"),
             accentColor: Color(hex: "3B82F6"), // Blue
             rotation: -10
         ),
         OnboardingItem(
             image: "flirty",
-            title: NSLocalizedString("onboarding_3_title", comment: ""),
-            description: NSLocalizedString("onboarding_3_message", comment: ""),
+            title: localized("onboarding_3_title"),
+            description: localized("onboarding_3_message"),
             accentColor: Color(hex: "EF4444"), // Purple
             rotation: 8
         ),
         OnboardingItem(
             image: "splash_foto",
-            title: NSLocalizedString("onboarding_4_title", comment: ""),
-            description: NSLocalizedString("onboarding_4_message", comment: ""),
+            title: localized("onboarding_4_title"),
+            description: localized("onboarding_4_message"),
             accentColor: Color(hex: "EC4899"), // Pink
             rotation: -12
         )

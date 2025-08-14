@@ -51,10 +51,10 @@ struct TabBar: View {
             .tag(TabBarItem.history)
         }
         .background(Color(.systemBackground))
-        .alert(NSLocalizedString("question_credits_info", comment: ""), isPresented: $showQuestionInfoAlert) {
+        .alert(localized("question_credits_info"), isPresented: $showQuestionInfoAlert) {
             Button("OK", role: .cancel) { }
         } message: {
-            Text(NSLocalizedString("credit_alert", comment: ""))
+            Text(localized("credit_alert"))
         }
         .onAppear {
             updateQuestionCredits()

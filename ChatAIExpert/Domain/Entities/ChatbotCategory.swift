@@ -29,6 +29,6 @@ enum ChatbotCategory: String, CaseIterable, Identifiable {
     }
     
     var localizedName: String {
-          NSLocalizedString(self.rawValue, comment: "Category name")
+          localized(self.rawValue)
       }
 }

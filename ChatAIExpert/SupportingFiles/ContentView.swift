@@ -34,7 +34,7 @@ struct ContentView: View {
                     }
                 
                 VStack(spacing: 20) {
-                    Text(NSLocalizedString("daily_gift", comment: ""))
+                    Text(localized("daily_gift"))
                         .font(.system(size: 24, weight: .bold))
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)

@@ -24,12 +24,9 @@ struct ChatAIExpertApp: App {
     @State private var viewID = UUID()
     
     init() {
-        
-        // Initialize Language Manager to detect device language
-        _ = LanguageManager.shared
-        
         // Configure TabBar appearance
         UITabBar.configureAppearance()
+        _ = LanguageManager.shared
         
     }
     
@@ -37,8 +34,10 @@ struct ChatAIExpertApp: App {
         WindowGroup {
             SplashView()
                 .preferredColorScheme(.light)
-                .id(viewID)
+                .id(viewID) // View'ı yeniden çizmeye zorlar
                 .onReceive(NotificationCenter.default.publisher(for: .languageChanged)) { _ in
+                    // Dil değiştiğinde (notification geldiğinde) viewID'yi değiştirerek
+                    // tüm arayüzün yeniden çizilmesini tetikle.
                     viewID = UUID()
                 }
         }

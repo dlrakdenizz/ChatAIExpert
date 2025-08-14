@@ -114,19 +114,19 @@ final class SettingsViewModel: ObservableObject {
     
     private func setupItems() {
         items[.appearance] = [
-            SettingsItem(title: NSLocalizedString("Change Language", comment: ""), icon: "globe", section: .appearance, action: .changeLanguage)
+            SettingsItem(title: localized("Change Language"), icon: "globe", section: .appearance, action: .changeLanguage)
         ]
         
         items[.spread] = [
-            SettingsItem(title: NSLocalizedString("Rate App", comment: ""), icon: "star", section: .spread, action: .rateApp),
-            SettingsItem(title: NSLocalizedString("Share App", comment: ""), icon: "square.and.arrow.up", section: .spread, action: .shareApp)
+            SettingsItem(title: localized("Rate App"), icon: "star", section: .spread, action: .rateApp),
+            SettingsItem(title: localized("Share App"), icon: "square.and.arrow.up", section: .spread, action: .shareApp)
         ]
         
         items[.support] = [
-            SettingsItem(title: NSLocalizedString("Our Team", comment: ""), icon: "person.2", section: .support, action: .openTeam),
-            SettingsItem(title: NSLocalizedString("Contact Support", comment: ""), icon: "envelope.badge", section: .support, action: .contactSupport),
-            SettingsItem(title: NSLocalizedString("Privacy Policy", comment: ""), icon: "hand.raised", section: .support, action: .openPrivacy),
-            SettingsItem(title: NSLocalizedString("Terms of Use", comment: ""), icon: "doc.text", section: .support, action: .openTerms)
+            SettingsItem(title: localized("Our Team"), icon: "person.2", section: .support, action: .openTeam),
+            SettingsItem(title: localized("Contact Support"), icon: "envelope.badge", section: .support, action: .contactSupport),
+            SettingsItem(title: localized("Privacy Policy"), icon: "hand.raised", section: .support, action: .openPrivacy),
+            SettingsItem(title: localized("Terms of Use"), icon: "doc.text", section: .support, action: .openTerms)
         ]
     }
 }

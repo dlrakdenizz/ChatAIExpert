@@ -119,7 +119,7 @@ struct NavigationButtons: View {
     var body: some View {
         HStack(spacing: buttonSpacing) {
             if currentPage < totalPages - 1 {
-                Button(NSLocalizedString("Skip", comment: "")) {
+                Button(localized("Skip")) {
                     withAnimation(.spring(response: 0.5, dampingFraction: 0.8)) {
                         currentPage = totalPages - 1
                     }
@@ -143,7 +143,7 @@ struct NavigationButtons: View {
                     }
                 } label: {
                     HStack(spacing: 8) {
-                        Text(NSLocalizedString("Next", comment: ""))
+                        Text(localized("Next"))
                             .font(.system(size: nextButtonFontSize, weight: .semibold))
                         Image(systemName: "arrow.right")
                             .font(.system(size: 14, weight: .bold))
@@ -190,7 +190,7 @@ struct NavigationButtons: View {
                     onComplete()
                 } label: {
                     HStack(spacing: 8) {
-                        Text(NSLocalizedString("Get Started", comment: ""))
+                        Text(localized("Get Started"))
                             .font(.system(size: getStartedFontSize, weight: .bold))
                     }
                     .foregroundColor(.white)
