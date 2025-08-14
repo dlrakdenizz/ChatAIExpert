@@ -19,6 +19,7 @@ struct CustomInputChatView: View {
     @State private var showImageSourceMenu = false
     @State private var isAddViewExpanded = false
     @ObservedObject var viewModel: ChatViewModel
+    @FocusState private var isTextFieldFocused: Bool
     
     var body: some View {
         VStack {
@@ -35,6 +36,7 @@ struct CustomInputChatView: View {
                         .textFieldStyle(PlainTextFieldStyle())
                         .font(.body)
                         .frame(minHeight: 30)
+                        .focused($isTextFieldFocused)
                         .onChange(of: text) { newValue in
                             if newValue.count > 300 {
                                 text = String(newValue.prefix(300))
@@ -52,6 +54,7 @@ struct CustomInputChatView: View {
                 Button(action: {
                     action()
                     text = ""
+                    isTextFieldFocused = false
                 }, label: {
                     Text(NSLocalizedString("Send", comment: ""))
                         .bold()
