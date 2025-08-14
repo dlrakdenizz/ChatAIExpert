@@ -14,7 +14,7 @@ struct MessageView: View {
     let chatbot : Chatbots
     var isTyping: Bool = false
     var paragraphs: [String] = []
-    var imageData: Data?
+    var imageData: [Data]?
     @State private var dotOffset: CGFloat = 0
     @State private var showingCopyAlert = false
     
@@ -24,12 +24,16 @@ struct MessageView: View {
                 Spacer()
                 
                 VStack(alignment: .trailing, spacing: 8) {
-                    if let imageData = imageData, let uiImage = UIImage(data: imageData) {
-                        Image(uiImage: uiImage)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(maxWidth: 200)
-                            .cornerRadius(10)
+                    if let imageDataArray = imageData {
+                        ForEach(imageDataArray, id: \.self) { data in
+                            if let uiImage = UIImage(data: data) {
+                                Image(uiImage: uiImage)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(maxWidth: 240) // Genişliği ayarla
+                                    .cornerRadius(10)
+                            }
+                        }
                     }
                     
                     if !messageText.isEmpty {
@@ -79,13 +83,6 @@ struct MessageView: View {
                         }
                     } else {
                         VStack(alignment: .leading, spacing: 8) {
-                            if let imageData = imageData, let uiImage = UIImage(data: imageData) {
-                                Image(uiImage: uiImage)
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(maxWidth: 200)
-                                    .cornerRadius(10)
-                            }
                             
                             Text(messageText)
                                 .padding(12)

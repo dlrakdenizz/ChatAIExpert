@@ -10,12 +10,13 @@ import SwiftUI
 import PhotosUI
 
 struct ImagePicker: UIViewControllerRepresentable {
-    @Binding var selectedImage: UIImage?
+    @Binding var selectedImage: [UIImage]
     @Environment(\.presentationMode) private var presentationMode
     
     func makeUIViewController(context: Context) -> PHPickerViewController {
         var config = PHPickerConfiguration()
         config.filter = .images
+        config.selectionLimit = 3
         let picker = PHPickerViewController(configuration: config)
         picker.delegate = context.coordinator
         return picker
@@ -39,12 +40,31 @@ struct ImagePicker: UIViewControllerRepresentable {
             
             guard let provider = results.first?.itemProvider else { return }
             
-            if provider.canLoadObject(ofClass: UIImage.self) {
-                provider.loadObject(ofClass: UIImage.self) { image, _ in
-                    DispatchQueue.main.async {
-                        self.parent.selectedImage = image as? UIImage
+            if results.isEmpty {
+                return
+            }
+            
+            var newImages: [UIImage] = []
+            let group = DispatchGroup() // Tüm resimlerin yüklenmesini beklemek için
+            
+            for result in results {
+                group.enter()
+                if result.itemProvider.canLoadObject(ofClass: UIImage.self) {
+                    result.itemProvider.loadObject(ofClass: UIImage.self) { (image, error) in
+                        if let image = image as? UIImage {
+                            newImages.append(image)
+                        }
+                        group.leave()
                     }
+                } else {
+                    group.leave()
                 }
+            }
+            
+            // Tüm resimler yüklendiğinde, ana diziye ekle
+            group.notify(queue: .main) {
+                // Mevcut resimlerin üzerine ekle, ezme
+                self.parent.selectedImage.append(contentsOf: newImages)
             }
         }
     }

@@ -63,15 +63,18 @@ class ChatViewModel : ObservableObject {
         repository.clearChatHistory(for: chatbotType)
     }
     
-    func sendMessage(_ message: String, image: UIImage? = nil) {
+    func sendMessage(_ message: String, image: [UIImage]? = nil) {
         
                // Soru hakkını azalt
                settingsRepository.decrementQuestionCredits()
+        
+        let imagesData = image?.map { $0.jpegData(compressionQuality: 0.8) }
+                                        .compactMap { $0 } // nil olanları kaldır
 
         let userMessage = Message(
             isFromCurrentUser: true,
             messageText: message,
-            imageData: image?.jpegData(compressionQuality: 0.8)
+            imageData: imagesData
         )
         messages.append(userMessage)
         
@@ -120,10 +123,10 @@ class ChatViewModel : ObservableObject {
         let id = historyId ?? UUID().uuidString
         let history = ChatHistory(
             id: id,
-            chatbotType: chatbotType,
+            chatbotType: chatbotType.rawValue,
             messages: messages,
             createdAt: createdAt,
-            updatedAt: Date()
+            updatedAt: Date(), customTitle: ""
         )
         historyViewModel.saveHistory(history)
         historyId = id

@@ -12,7 +12,7 @@ struct ChatView: View {
     let chatbot: Chatbots
     let historyId: String?
     @State private var messageText = ""
-    @State private var selectedImage: UIImage?
+    @State private var selectedImage: [UIImage] = []
     @StateObject private var viewModel: ChatViewModel
     @StateObject private var keyboardManager = KeyboardManager()
     
@@ -35,91 +35,94 @@ struct ChatView: View {
     
     var body: some View {
         
-        ScrollViewReader { proxy in
-            ScrollView {
-                VStack(alignment: .leading, spacing: 12){
-                    ForEach(viewModel.messages) { message in
-                        MessageView(
-                            isFromCurrentUser: message.isFromCurrentUser,
-                            messageText: message.messageText,
-                            chatbot: chatbot,
-                            isTyping: message.isTyping,
-                            imageData: message.imageData
-                        )
-                        .id(message.id)
+        VStack {
+            ScrollViewReader { proxy in
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 12){
+                        ForEach(viewModel.messages) { message in
+                            MessageView(
+                                isFromCurrentUser: message.isFromCurrentUser,
+                                messageText: message.messageText,
+                                chatbot: chatbot,
+                                isTyping: message.isTyping,
+                                imageData: message.imageData
+                            )
+                            .id(message.id)
+                        }
                     }
                 }
-            }
-            .onAppear {
-                if let lastMessage = viewModel.messages.last {
-                    proxy.scrollTo(lastMessage.id, anchor: .bottom)
-                }
-            }
-            .onChange(of: viewModel.messages.count) { _ in
-                if let lastMessage = viewModel.messages.last {
-                    withAnimation {
+                .onAppear {
+                    if let lastMessage = viewModel.messages.last {
                         proxy.scrollTo(lastMessage.id, anchor: .bottom)
                     }
                 }
-            }
-            .onTapGesture {
-                keyboardManager.dismissKeyboard()
-            }
-            CustomInputChatView(
-                text: $messageText,
-                action: sendMessage,
-                chatbot: chatbot,
-                selectedImage : $selectedImage,
-                viewModel: viewModel
-            )
-            .padding(.bottom, 10)
-            .navigationTitle(chatbot.title)
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar(.hidden, for: .tabBar)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    HStack(spacing: 16) {
-                        Button(action: {
-                            viewModel.prepareShareText()
-                            isShareSheetPresented = true
-                        }) {
-                            Image(systemName: "square.and.arrow.up")
-                                .foregroundColor(.black)
+                .onChange(of: viewModel.messages.count) { _ in
+                    if let lastMessage = viewModel.messages.last {
+                        withAnimation {
+                            proxy.scrollTo(lastMessage.id, anchor: .bottom)
                         }
-                        
-                        Button(action: {
-                            showNewChatConfirmation = true
-                        }) {
-                            Image(systemName: "square.and.pencil")
-                                .foregroundColor(viewModel.isResponding ? .gray : .black)
-                        }
-                        .disabled(viewModel.isResponding)
                     }
                 }
-            }
-            .padding(.vertical)
-            .onDisappear {
-                if historyId == nil {
-                    viewModel.clearMessages()
+                .onTapGesture {
+                    keyboardManager.dismissKeyboard()
                 }
-            }
-            .sheet(isPresented: $isShareSheetPresented) {
-                ShareSheet(activityItems: [viewModel.shareText])
-            }
-            .alert("Question Credit!", isPresented: $showCreditsAlert) {
-                Button("OK") { }
-            } message: {
-                Text(creditsAlertMessage)
-            }
-            .alert(localized("New Chat"), isPresented: $showNewChatConfirmation) {
-                Button(localized("Cancel"), role: .cancel) { }
-                Button(localized("OK")) {
-                    viewModel.clearMessages()
+                CustomInputChatView(
+                    text: $messageText,
+                    action: sendMessage,
+                    chatbot: chatbot,
+                    selectedImage : $selectedImage,
+                    viewModel: viewModel
+                )
+                .padding(.bottom, 10)
+                .navigationTitle(chatbot.title)
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar(.hidden, for: .tabBar)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        HStack(spacing: 16) {
+                            Button(action: {
+                                viewModel.prepareShareText()
+                                isShareSheetPresented = true
+                            }) {
+                                Image(systemName: "square.and.arrow.up")
+                                    .foregroundColor(.black)
+                            }
+                            
+                            Button(action: {
+                                showNewChatConfirmation = true
+                            }) {
+                                Image(systemName: "square.and.pencil")
+                                    .foregroundColor(viewModel.isResponding ? .gray : .black)
+                            }
+                            .disabled(viewModel.isResponding)
+                        }
+                    }
                 }
-            } message: {
-                Text(localized("new_chat_message"))
+                .padding(.vertical)
+                .onDisappear {
+                    if historyId == nil {
+                        viewModel.clearMessages()
+                    }
+                }
+                .sheet(isPresented: $isShareSheetPresented) {
+                    ShareSheet(activityItems: [viewModel.shareText])
+                }
+                .alert("Question Credit!", isPresented: $showCreditsAlert) {
+                    Button("OK") { }
+                } message: {
+                    Text(creditsAlertMessage)
+                }
+                .alert(localized("New Chat"), isPresented: $showNewChatConfirmation) {
+                    Button(localized("Cancel"), role: .cancel) { }
+                    Button(localized("OK")) {
+                        viewModel.clearMessages()
+                    }
+                } message: {
+                    Text(localized("new_chat_message"))
+                }
             }
         }
+        
     }
     
     func sendMessage() {
@@ -131,13 +134,16 @@ struct ChatView: View {
             return
         }
         
-        if let image = selectedImage {
-            viewModel.sendMessage(messageText, image: image)
-            selectedImage = nil
-        } else {
-            viewModel.sendMessage(messageText)
+        guard !messageText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || !selectedImage.isEmpty else {
+            return // İkisi de boşsa gönderme.
         }
+        
+        
+        viewModel.sendMessage(messageText, image: selectedImage)
+        
+        // Gönderdikten sonra giriş alanlarını temizle.
         messageText = ""
+        selectedImage.removeAll()
     }
 }
 

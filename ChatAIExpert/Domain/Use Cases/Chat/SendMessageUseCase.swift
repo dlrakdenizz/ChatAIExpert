@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 protocol SendMessageUseCaseProtocol {
-    func execute(message: String, chatbotType: Chatbots, image: UIImage?) async throws -> String
+    func execute(message: String, chatbotType: Chatbots, image: [UIImage]?) async throws -> String
 }
 
 struct SendMessageUseCase: SendMessageUseCaseProtocol {
@@ -19,7 +19,7 @@ struct SendMessageUseCase: SendMessageUseCaseProtocol {
         self.repository = repository
     }
     
-    func execute(message: String, chatbotType: Chatbots, image: UIImage?) async throws -> String {
+    func execute(message: String, chatbotType: Chatbots, image: [UIImage]?) async throws -> String {
         return try await repository.sendMessage(message, chatbotType: chatbotType, image: image)
     }
 }

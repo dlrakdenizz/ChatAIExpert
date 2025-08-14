@@ -13,7 +13,7 @@ struct CustomInputChatView: View {
     @Binding var text : String
     var action : () -> Void
     let chatbot : Chatbots
-    @Binding var selectedImage: UIImage?
+    @Binding var selectedImage: [UIImage]
     @State private var isImagePickerPresented = false
     @State private var isCameraPresented = false
     @State private var showImageSourceMenu = false
@@ -65,36 +65,46 @@ struct CustomInputChatView: View {
             .padding(.bottom, 8)
             .padding(.horizontal)
             
-            if let selectedImage = selectedImage {
-                ZStack(alignment: .topTrailing) {
-                    Image(uiImage: selectedImage)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(height: 200)
-                        .cornerRadius(10)
-                        .padding(.horizontal)
-                    
-                    Button(action: {
-                        self.selectedImage = nil
-                    }) {
-                        Image(systemName: "xmark.circle.fill")
-                            .foregroundColor(.black)
-                            .font(.system(size: 28))
-                            .background(
-                                Circle()
-                                    .fill(Color.white)
-                                    .frame(width: 32, height: 32)
-                            )
-                            .padding(8)
+            if !selectedImage.isEmpty {
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack {
+                        ForEach(selectedImage, id: \.self) { img in
+                            ZStack(alignment: .topTrailing) {
+                                Image(uiImage: img)
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 80, height: 80)
+                                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                                
+                                Button(action: {
+                                    // Bu resmi diziden kaldır
+                                    if let index = selectedImage.firstIndex(of: img) {
+                                        selectedImage.remove(at: index)
+                                    }
+                                }) {
+                                    Image(systemName: "xmark.circle.fill")
+                                        .foregroundColor(.black)
+                                        .background(Circle().fill(Color.white))
+                                        .font(.title2)
+                                }
+                                .padding(4)
+                            }
+                        }
                     }
+                    .padding(.horizontal)
                 }
+                .frame(height: 90)
             }
         }
         .sheet(isPresented: $isImagePickerPresented) {
             ImagePicker(selectedImage: $selectedImage)
         }
         .sheet(isPresented: $isCameraPresented) {
-            CameraView(selectedImage: $selectedImage)
+            CameraView(selectedImage: .init(get: { nil }, set: { image in
+                if let image = image {
+                    selectedImage.append(image)
+                }
+            }))
         }
     }
 }

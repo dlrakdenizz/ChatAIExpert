@@ -21,9 +21,9 @@ class ChatRepository: ChatRepositoryProtocol {
         self.model = firebaseService.createGenerativeModel()
     }
     
-    func sendMessage(_ message: String, chatbotType: Chatbots, image: UIImage?) async throws -> String {
+    func sendMessage(_ message: String, chatbotType: Chatbots, image: [UIImage]?) async throws -> String {
         
-        // Her chatbot için ayrı chat session'ı al veya oluştur
+         //Her chatbot için ayrı chat session'ı al veya oluştur
         let chatKey = chatbotType.rawValue
         let chat: Chat
         
@@ -38,23 +38,40 @@ class ChatRepository: ChatRepositoryProtocol {
             chatSessions[chatKey] = chat
         }
         
-        // Mesajı gönder ve yanıtı al
         do {
-            let response: GenerateContentResponse
-            
-            if let image = image {
-                // Resimli mesaj gönder - chat.sendMessage ile bağlam korunur
-                let resizedImage = resizeImage(image: image, targetSize: CGSize(width: 1024, height: 1024))
-                response = try await chat.sendMessage(resizedImage, message)
-            } else {
-                // Sadece text mesajı gönder - chat.sendMessage ile bağlam korunur
-                response = try await chat.sendMessage(message)
+                let response: GenerateContentResponse
+                
+                if let images = image, !images.isEmpty {
+                    // Multiple image desteği
+                    if images.count == 1 {
+                        // Tek resim - mevcut yöntemle
+                        let resizedImage = resizeImage(image: images[0], targetSize: CGSize(width: 1024, height: 1024))
+                        response = try await chat.sendMessage(resizedImage, message)
+                    } else {
+                        // Multiple images - alternatif yaklaşım
+                        var content: [any PartsRepresentable] = []
+                        
+                        // Text part ekle
+                        content.append(message)
+                        
+                        // Her resim için part ekle
+                        for image in images {
+                            let resizedImage = resizeImage(image: image, targetSize: CGSize(width: 1024, height: 1024))
+                            content.append(resizedImage)
+                        }
+                        
+                        // Direct content array gönder
+                        response = try await chat.sendMessage(content)
+                    }
+                } else {
+                    // Sadece text mesajı gönder
+                    response = try await chat.sendMessage(message)
+                }
+                
+                return response.text ?? "I couldn't understand, can you say again?"
+            } catch {
+                throw error
             }
-            
-            return response.text ?? "I couldn't understand, can you say again?"
-        } catch {
-            throw error
-        }
     }
     
     // Chat history'yi temizle
@@ -66,12 +83,13 @@ class ChatRepository: ChatRepositoryProtocol {
     // **MARK: - Private Helper Methods**
     private func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
         let size = image.size
-        let widthRatio  = targetSize.width  / size.width
+        let widthRatio = targetSize.width / size.width
         let heightRatio = targetSize.height / size.height
-        let scaleRatio = min(widthRatio, heightRatio)
-        let newSize = CGSize(width: size.width * scaleRatio, height: size.height * scaleRatio)
+        let ratio = min(widthRatio, heightRatio)
         
-        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        let newSize = CGSize(width: size.width * ratio, height: size.height * ratio)
+        
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 0)
         image.draw(in: CGRect(origin: .zero, size: newSize))
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
