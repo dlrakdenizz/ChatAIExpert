@@ -243,6 +243,8 @@ A volte, la musica capisce ciò che non riusciamo a dire.";
 "Ask to " = "Chiedi a ";
 "New Chat" = "Nuova Chat";
 "new_chat_message" = "Verrà aperta una nuova chat e la tua chat attuale verrà salvata nella cronologia. Vuoi continuare?";
+"Stop" = "Fermare";
+"Listen" = "Ascoltare";
 
 // Onboarding
 "onboarding_1_title" = "Sblocca il Tuo Mondo di Conoscenza";

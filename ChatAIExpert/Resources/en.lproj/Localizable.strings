@@ -243,6 +243,8 @@ Sometimes, music understands what we cannot say.";
 "Ask to " = "Ask to ";
 "New Chat" = "New Chat";
 "new_chat_message" = "A new chat will be opened and your current chat will be saved to history. Do you want to continue";
+"Stop" = "Stop";
+"Listen" = "Listen";
 
 //Onboarding
 "onboarding_1_title" = "Unlock Your World of Knowledge";

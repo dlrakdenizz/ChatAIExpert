@@ -242,6 +242,8 @@ Parfois, la musique comprend ce que nous ne pouvons pas dire.";
 "Ask to " = "Demander à ";
 "New Chat" = "Nouvelle discussion";
 "new_chat_message" = "Une nouvelle discussion sera ouverte et votre discussion actuelle sera sauvegardée dans l'historique. Voulez-vous continuer ?";
+"Stop" = "Arrêter";
+"Listen" = "Écouter";
 
 //Onboarding
 "onboarding_1_title" = "Déverrouillez votre monde de connaissances";

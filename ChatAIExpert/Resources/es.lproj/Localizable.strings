@@ -216,6 +216,8 @@
 "Ask to " = "Pregúntale a ";
 "New Chat" = "Nuevo chat";
 "new_chat_message" = "Se abrirá un nuevo chat y tu chat actual se guardará en el historial. ¿Quieres continuar?";
+"Stop" = "Detener";
+"Listen" = "Escuchar";
 
 //Onboarding
 "onboarding_1_title" = "Desbloquea tu mundo de conocimiento";

@@ -239,6 +239,8 @@ Bazen müzik, söyleyemediklerimizi anlar.";
 "Ask to " = "Şuna sor: ";
 "New Chat" = "Yeni Sohbet";
 "new_chat_message" = "Yeni bir sohbet açılacak ve mevcut sohbetiniz geçmişe kaydedilecektir. Devam etmek istiyor musunuz?";
+"Stop" = "Dur";
+"Listen" = "Dinle";
 
 //Onboarding
 "onboarding_1_title" = "Bilgi Dünyanızın Kilidini Açın";

@@ -240,6 +240,8 @@ Manchmal versteht die Musik, was wir nicht sagen können.";
 "Ask to " = "Frage ";
 "New Chat" = "Neuer Chat";
 "new_chat_message" = "Ein neuer Chat wird geöffnet und dein aktueller Chat wird im Verlauf gespeichert. Möchtest du fortfahren?";
+"Stop" = "Stoppen";
+"Listen" = "Hören";
 
 //Onboarding
 "onboarding_1_title" = "Erschließe deine Welt des Wissens";

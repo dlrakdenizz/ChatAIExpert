@@ -217,6 +217,8 @@
 "Ask to " = "에게 물어보기 ";
 "New Chat" = "새 채팅";
 "new_chat_message" = "새로운 채팅이 시작되고 현재 채팅은 히스토리에 저장됩니다. 계속하시겠습니까?";
+"Stop" = "멈추다";
+"Listen" = "듣다";
 
 //Onboarding
 "onboarding_1_title" = "지식의 세계를 열어보세요";
