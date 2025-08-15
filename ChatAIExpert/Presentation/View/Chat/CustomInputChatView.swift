@@ -53,7 +53,6 @@ struct CustomInputChatView: View {
                 
                 Button(action: {
                     action()
-                    text = ""
                     isTextFieldFocused = false
                 }, label: {
                     Text(localized("Send"))

@@ -170,29 +170,5 @@ class HistoryViewModel {
            isLoaded = false
            loadHistories()
        }
-    
-    func debugCurrentState() {
-           print("🔍 DEBUG - Current HistoryViewModel State:")
-           print("  - isLoaded: \(isLoaded)")
-           print("  - chatHistories array count: \(chatHistories.count)")
-           print("  - modelContext has changes: \(modelContext.hasChanges)")
-           
-           // Direct database fetch
-           let descriptor = FetchDescriptor<ChatHistory>()
-           do {
-               let dbHistories = try modelContext.fetch(descriptor)
-               print("  - Direct DB query result: \(dbHistories.count) histories")
-               
-               if dbHistories.count != chatHistories.count {
-                   print("  ⚠️  MISMATCH: DB has \(dbHistories.count) but array has \(chatHistories.count)")
-                   print("  🔄 Forcing reload...")
-                   DispatchQueue.main.async { [weak self] in
-                       self?.chatHistories = dbHistories
-                   }
-               }
-           } catch {
-               print("  - Error in direct DB query: \(error)")
-           }
-       }
 }
 
